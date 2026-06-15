@@ -1,190 +1,227 @@
-# UNIGAP - PORTFOLIO BUILDING MODULE -  PBI TEMPLATE
-
-🔥Use this template as an outline for your Github projects. Make a copy of this readme file and tailor it your own. Happy portfolio-ing and start applying aggressively :"))
-
----
-![E-commerce Website_Analysis](https://github.com/Dorothy-Ho-Vy/Sample-Readme-template/blob/0e47d32968459ec80d7d2666fbf5044ac56894e6/1.png)
-
-Change Icon emoji 🔥🔍📘🚩 to your likings by clicking "Start" + "."
-
-
-# 📊 Your Project Name [ Business question + Domain + Tools ]  
-
- _Example:_
- _Analyze & Discover the User Churnsinsight of Databel – a Telecomproviders| SQL & PowerBI_
- 
-_+ Business question: The core problems/ the core questions that this project solves/ answers -> User Churn Analysis_
-
-_+ Domain: Domain/ Industry that this projects focus on --> a Telecomproviders_
-
-**_📌You need to show that your projects are applicable to real business use cases, for a particular industry, not just "learning projects"_**
+![Power BI](https://img.shields.io/badge/Tool-Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
 ---
 
-## 📑 Table of Contents  
-1. [📌 Background & Overview](#-background--overview)  
-2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
-3. [🧠 Design Thinking Process](#-design-thinking-process)  
-4. [📊 Key Insights & Visualizations](#-key-insights--visualizations)  
+<p align="center">
+  <img src="Images/banner.png" width="100%">
+</p>
+
+# 📊 {{PROJECT_TITLE}} | Power BI
+
+_{{ONE_LINE_SUMMARY}}_
+
+- 🎯 **Business Question:** {{BUSINESS_QUESTION}}
+- 🏬 **Domain:** {{DOMAIN}}
+- 🛠️ **Tools:** Power BI
+
+👤 Author: {{AUTHOR}}
+
+📅 Date: {{DATE}}
+
+---
+
+## 📑 Table of Contents
+1. [📌 Background & Overview](#-background--overview)
+2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)
+3. [🧠 Design Thinking Process](#-design-thinking-process)
+4. [📊 Key Insights & Visualizations](#-key-insights--visualizations)
 5. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
 ---
 
-## 📌 Background & Overview  
+## 📌 Background & Overview
 
-### Objective:
-### 📖 What is this project about? 
- 
-- Provide a brief introduction to the project. Define the problem statement/ business question that this project will show and why it is important.
-- Write in bullet point format
+### Objective
 
- _Example:_
+{{COMPANY_CONTEXT_PARAGRAPH}}
 
- This project analyzes sales trends and inventory control using SQL and Power BI. The objective is
-✔️ Identify high-demand products and sales trends.  
-✔️ Optimize inventory levels to prevent overstocking or stockouts.  
-✔️ Provide actionable insights through Power BI dashboards.  
+The {{STAKEHOLDER}} needs a dashboard to answer {{N}} main questions:
 
+✔️ **{{QUESTION_1_TITLE}}:** {{QUESTION_1_DETAIL}}
 
-**_📌You need to provide the context in a clearcut way_**
+✔️ **{{QUESTION_2_TITLE}}:** {{QUESTION_2_DETAIL}}
 
-**_📌Keep your language in this part simple and relatable. Ditch the jargon and speak in terms your audience uses every day. Focus on the practical applications and business value. Show them how the insights can directly impact decision-making and drive success_**
+✔️ **{{QUESTION_3_TITLE}}:** {{QUESTION_3_DETAIL}}
 
-### 👤 Who is this project for?  
+{{PROJECT_PURPOSE_PARAGRAPH}}
 
-Mention who might benefit from this project 
+### 👤 Who is this project for?
 
- _Example:_
+✔️ {{AUDIENCE_1}} - {{AUDIENCE_1_REASON}}
 
-✔️ Data analysts & business analysts  
-✔️ Supply chain managers & inventory controllers  
-✔️ Decision-makers & stakeholders  
+✔️ {{AUDIENCE_2}} - {{AUDIENCE_2_REASON}}
+
+✔️ {{AUDIENCE_3}} - {{AUDIENCE_3_REASON}}
 
 ---
 
-## 📂 Dataset Description & Data Structure  
+## 📂 Dataset Description & Data Structure
 
-### 📌 Data Source  
-- Source: (Mention where the dataset is obtained from—Kaggle, company database, government sources, etc.)  
-- Size: (Mention the number of rows & columns)  
-- Format: (.csv, .sql, .xlsx, etc.)  
+### 📌 Data Source
+- Source: {{DATA_SOURCE}}
+- Format: {{DATA_FORMAT}}
 
-### 📊 Data Structure & Relationships  
+### 📊 Data Structure & Relationships
 
-#### 1️⃣ Table Schema & Data Snapshot 
-Mention how many tables are in the dataset.  Only mention tables that you actually used from the entire dataset. 
-Table 1: Products Table  
+#### 1️⃣ Tables Used
 
-👉🏻 Insert a screenshot of table schema. if table is too long, only show a snapshot of it. Recommend to put it in a toggle format
+The dataset has **{{N_TABLES}} tables**:
 
- _Example:_
+- **{{TABLE_1}}** - {{TABLE_1_DESC}}
+- **{{TABLE_2}}** - {{TABLE_2_DESC}}
+- **{{TABLE_3}}** - {{TABLE_3_DESC}}
 
-| Column Name | Data Type | Description |  
-|-------------|----------|-------------|  
-| Product_ID  | INT      | Unique identifier for each product |  
-| Name        | TEXT     | Product name |  
-| Category    | TEXT     | Product category |  
-| Price       | FLOAT    | Price per unit |  
+#### 2️⃣ Table Schema
 
+**Table: {{TABLE_1}}** ({{TABLE_1_ROLE}})
 
-Table 2: Sales Transactions  
+| Column Name | Description |
+|---|---|
+| {{COLUMN}} | {{DESCRIPTION}} |
 
-👉🏻 Insert a screenshot of table schema. if table is too long, only show a snapshot of it. Recommend to put it in a toggle format
+**Table: {{TABLE_2}}**
 
+| Column Name | Description |
+|---|---|
+| {{COLUMN}} | {{DESCRIPTION}} |
 
- _Example:_
+**Table: {{TABLE_3}}**
 
-| Column Name    | Data Type | Description |  
-|---------------|----------|-------------|  
-| Transaction_ID | INT      | Unique identifier for each sale |  
-| Product_ID     | INT      | Foreign key linking to Products table |  
-| Quantity       | INT      | Number of items sold |  
-| Sale_Date      | DATE     | Date of transaction |  
+| Column Name | Description |
+|---|---|
+| {{COLUMN}} | {{DESCRIPTION}} |
 
+#### 3️⃣ Data Relationships
 
-**_📌If the table is too big, only capture a part of it that contains key metrics you used in the projects or put the table in toggle_**
+The {{N_TABLES}} tables are connected as follows:
 
-<details>
-<summary>Click to toggle</summary>
+- **{{TABLE_X}} → {{TABLE_Y}}**: {{RELATIONSHIP_DESC}} (joined on `{{KEY}}`)
+- **{{TABLE_Y}} → {{TABLE_Z}}**: {{RELATIONSHIP_DESC}} (joined on `{{KEY}}`)
 
-This content is hidden by default and will expand/collapse when clicked.
-
-You can add more details here, like code blocks, lists, or images.
-</details>
-
-#### 🥰3️⃣ Data Relationships:  
-👉🏻 Include a screenshot of Data Modeling to visualize relationships.  
+<p align="center">
+  <img src="Images/data_model.png" width="80%">
+</p>
 
 ---
 
-## 🧠 Design Thinking Process  
+## 🧠 Design Thinking Process
 
-Explain the step-by-step approach taken to solve the problem.  
+This project followed the Design Thinking framework across 3 main steps: Empathize, Define Point of View, and Ideate.
 
-👉🏻 Insert a screenshot of the Design Thinking steps (Screenshot your Excel design thinking tables for better presentation).  
+### 1️⃣ Empathize - Understanding the Stakeholder
 
-1️⃣ Empathize  
-2️⃣ Define point of view  
-3️⃣ Ideate  
-4️⃣ Prototype and review  
+| Question | Answer |
+|---|---|
+| **Who views this dashboard?** | {{STAKEHOLDER}} |
+| **What problem does it solve?** | {{PROBLEM_SOLVED}} |
+| **When & where is it used?** | {{USAGE_CONTEXT}} |
+| **Why is this analysis needed?** | {{WHY_NEEDED}} |
+| **How do they decide?** | {{HOW_DECIDE}} |
+| **Pains** | {{PAINS}} |
+| **Gains** | {{GAINS}} |
+| **Key Questions to Answer** | • {{KEY_Q1}}<br>• {{KEY_Q2}}<br>• {{KEY_Q3}}<br>• {{KEY_Q4}}<br>• {{KEY_Q5}} |
 
-**_📌Use Canva/ Powerpoint to change the format of your Design thinking table, making it more visually pleasant_**
+### 2️⃣ Define Point of View - Choosing the Right Angles
+
+| Point of View | Description | Why the stakeholder cares |
+|---|---|---|
+| **{{POV_1}}** | {{POV_1_DESC}} | {{POV_1_WHY}} |
+| **{{POV_2}}** | {{POV_2_DESC}} | {{POV_2_WHY}} |
+| **{{POV_3}}** | {{POV_3_DESC}} | {{POV_3_WHY}} |
+
+**Northstar Metrics:**
+
+| Northstar 1 | Northstar 2 |
+|---|---|
+| **{{NORTHSTAR_1_NAME}}** | **{{NORTHSTAR_2_NAME}}** |
+| Formula: `{{NORTHSTAR_1_FORMULA}}` | Formula: `{{NORTHSTAR_2_FORMULA}}` |
+| Success when: {{NORTHSTAR_1_SUCCESS}} | Success when: {{NORTHSTAR_2_SUCCESS}} |
+| Why this metric: {{NORTHSTAR_1_WHY}} | Why this metric: {{NORTHSTAR_2_WHY}} |
+
+### 3️⃣ Ideate - Structuring the Dashboard
+
+| | **Page 1: {{PAGE_1_NAME}}** | **Page 2: {{PAGE_2_NAME}}** | **Page 3: {{PAGE_3_NAME}}** |
+|---|---|---|---|
+| **Layer 0 (Scorecards)** | {{P1_LAYER0}} | {{P2_LAYER0}} | {{P3_LAYER0}} |
+| **Layer 1 (1-dimension breakdown)** | {{P1_LAYER1}} | {{P2_LAYER1}} | {{P3_LAYER1}} |
+| **Layer 2 (2-dimension breakdown)** | {{P1_LAYER2}} | {{P2_LAYER2}} | {{P3_LAYER2}} |
+
 ---
 
 ## ⚒️ Main Process
 
-**_📌If your project involves SQL as 1st part of data preprocessing, do this part, or else you can skip this part and jump directly into the Visualization part_**
+1️⃣ **Connect & Load Data** - {{STEP_1_DESC}}
 
-1️⃣ Data Cleaning & Preprocessing 
-2️⃣ Exploratory Data Analysis (EDA)  
-3️⃣ SQL/ Python Analysis 
+2️⃣ **Data Modeling** - {{STEP_2_DESC}}
 
-- In each step, show your Code
+3️⃣ **DAX Measures** - {{STEP_3_DESC}}
 
-- Include query/ code execution screenshots or result samples
-
-- Explain its purpose and its findings
-
-
-4️⃣ Power BI Visualization  (applicable for PBI Projects)
+4️⃣ **Power BI Visualization** - {{STEP_4_DESC}}
 
 ---
 
-## 📊 Key Insights & Visualizations  
+## 📊 Key Insights & Visualizations
 
-### 🔍 Dashboard Preview  
+### 🔍 Dashboard Preview
 
-#### 1️⃣ Dashboard 1 Preview  
-👉🏻 Insert Power BI dashboard screenshots here  
+#### 1️⃣ Page 1 - {{PAGE_1_NAME}}
 
-📌 Analysis 1:  
-- Observation: _Describe trends, key metrics, and patterns. Any insights from those observation_  
-- Recommendation: _Suggest actions based on insights._  
+<p align="center">
+  <img src="Images/{{PAGE_1_IMAGE}}.png" width="100%">
+</p>
 
-#### 2️⃣ Dashboard 2 Preview  
-👉🏻 Insert Power BI dashboard screenshots here
+📌 **Analysis 1:**
 
-📌 Analysis 2:   
-- Observation: _Describe trends, key metrics, and patterns. Any insights from those observation_  
-- Recommendation: _Suggest actions based on insights._  
+- **Observation:** {{PAGE_1_OBSERVATION}}
 
-#### 3️⃣ Dashboard 3 Preview  
-👉🏻 Insert Power BI dashboard screenshots here  
+- **Recommendation:**
+  - 🔴 **{{REC_1_TITLE}}** {{REC_1_DETAIL}}
+  - 🟡 **{{REC_2_TITLE}}** {{REC_2_DETAIL}}
+  - 🟢 **{{REC_3_TITLE}}** {{REC_3_DETAIL}}
 
-📌 Analysis 3:  
-- Observation: _Describe trends, key metrics, and patterns. Any insights from those observation_  
-- Recommendation: _Suggest actions based on insights._  
+#### 2️⃣ Page 2 - {{PAGE_2_NAME}}
+
+<p align="center">
+  <img src="Images/{{PAGE_2_IMAGE}}.png" width="100%">
+</p>
+
+📌 **Analysis 2:**
+
+- **Observation:** {{PAGE_2_OBSERVATION}}
+
+- **Recommendation:**
+  - 🔴 **{{REC_1_TITLE}}** {{REC_1_DETAIL}}
+  - 🟡 **{{REC_2_TITLE}}** {{REC_2_DETAIL}}
+  - 🟢 **{{REC_3_TITLE}}** {{REC_3_DETAIL}}
+
+#### 3️⃣ Page 3 - {{PAGE_3_NAME}}
+
+<p align="center">
+  <img src="Images/{{PAGE_3_IMAGE}}.png" width="100%">
+</p>
+
+📌 **Analysis 3:**
+
+- **Observation:** {{PAGE_3_OBSERVATION}}
+
+- **Recommendation:**
+  - 🔴 **{{REC_1_TITLE}}** {{REC_1_DETAIL}}
+  - 🟡 **{{REC_2_TITLE}}** {{REC_2_DETAIL}}
+  - 🟢 **{{REC_3_TITLE}}** {{REC_3_DETAIL}}
 
 ---
 
-## 🔎 Final Conclusion & Recommendations  
+## 🔎 Final Conclusion & Recommendations
 
-👉🏻 Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following:  
+📍 Key Takeaways:
 
-📌 Key Takeaways:  
-✔️ Recommendation 1  
-✔️ Recommendation 2  
-✔️ Recommendation 3
+✔️ **{{TAKEAWAY_1_TITLE}}** {{TAKEAWAY_1_DETAIL}}
 
-**_📌Remember to summarize the most core insights/ observations you extract from the entire projects. 
- Recap ONLY key actions/ recommendations. DO NOT copy paste everything above_**
+✔️ **{{TAKEAWAY_2_TITLE}}** {{TAKEAWAY_2_DETAIL}}
+
+✔️ **{{TAKEAWAY_3_TITLE}}** {{TAKEAWAY_3_DETAIL}}
+
+✔️ **{{TAKEAWAY_4_TITLE}}** {{TAKEAWAY_4_DETAIL}}
+
+✔️ **{{TAKEAWAY_5_TITLE}}** {{TAKEAWAY_5_DETAIL}}
