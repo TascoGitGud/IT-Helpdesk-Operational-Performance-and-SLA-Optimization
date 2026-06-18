@@ -11,7 +11,7 @@
 
 _An interactive enterprise-grade analytical dashboard engineered using an optimized Star Schema data model to audit ticket support lifecycles, eliminate functional queue backlogs, and systematically remediate SLA breaches._
 
-- 🎯 **Business Question:** How can we minimize our systemic 61.66% SLA breach rate, trace core problem categories, and streamline Mean Time to Resolve (MTTR) across multiple functional queues and international locations?
+- 🎯 **Business Question:** How can we minimize our SLA breach rate, and Mean Time to Resolve (MTTR) across multiple functional queues and international locations?
 - 🏬 **Domain:** IT Service Management (ITSM) / Enterprise Operations
 - 🛠️ **Tools:** Power BI
 
@@ -41,10 +41,6 @@ The IT Manager (supported by the Service Desk Lead and Executive Board) needs a 
 ✔️ **SLA Compliance Bottlenecks:** Which support queues are experiencing the worst SLA non-compliance issues, and where are systemic delays occurring?
 
 ✔️ **Ticket Classification Impact:** Do Incident or Request tickets demand longer resolution intervals, and which ticket categories are driving the highest workloads?
-
-✔️ **Geographic Dispersion:** Which operating countries display critical resolution lag and require immediate operational adjustment?
-
-✔️ **Temporal Influx Patterns:** Are ticket spikes concentrated on specific days of the week or specific historical calendar months?
 
 This project unifies disjointed flat-file data into a centralized, interactive analytics solution. By uncovering granular performance metrics, it empowers management to execute data-backed capacity scheduling, reorganize staff distribution, and systematically drive down service delivery failures.
 
