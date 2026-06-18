@@ -7,12 +7,12 @@
   <img src="Images/banner.jpg" width="100%">
 </p>
 
-# 📊 {{PROJECT_TITLE}} | Power BI
+# 📊 IT Helpdesk Operations & SLA Optimization | Power BI
 
-_{{ONE_LINE_SUMMARY}}_
+_An interactive Power BI Star Schema dashboard designed to monitor helpdesk operational throughput, identify queue bottlenecks, and remediate systemic SLA compliance gaps._
 
-- 🎯 **Business Question:** {{BUSINESS_QUESTION}}
-- 🏬 **Domain:** {{DOMAIN}}
+- 🎯 **Business Question:** How can we optimize ticket resolution workflows (MTTR) and systematically reduce the critical 61.66% SLA breach rate across queues and regional boundaries?
+- 🏬 **Domain:** IT Operations / Service Management (ITSM) / Corporate Infrastructure
 - 🛠️ **Tools:** Power BI
 
 👤 Author: Bạch Minh Nam
@@ -32,25 +32,25 @@ _{{ONE_LINE_SUMMARY}}_
 
 ### Objective
 
-{{COMPANY_CONTEXT_PARAGRAPH}}
+As global organizations expand, managing internal and external technical support efficiently becomes vital to maintaining enterprise productivity. Fragmented ticket lifecycles frequently obfuscate true operational capacity and delay critical response times.
 
-The {{STAKEHOLDER}} needs a dashboard to answer {{N}} main questions:
+The IT Support Director and Operations Managers need a dashboard to answer 3 main questions:
 
-✔️ **{{QUESTION_1_TITLE}}:** {{QUESTION_1_DETAIL}}
+✔️ **Service Efficiency (MTTR):** What is our average time to resolve tickets, and which categories or queues face systemic bottlenecks?
 
-✔️ **{{QUESTION_2_TITLE}}:** {{QUESTION_2_DETAIL}}
+✔️ **SLA Compliance:** What factors are driving our severe 61.66% SLA breach rate, and how does performance vary across days of the week?
 
-✔️ **{{QUESTION_3_TITLE}}:** {{QUESTION_3_DETAIL}}
+✔️ **Resource & Geographic Optimization:** How are ticket workloads distributed among our 10 operational countries, and where should support engineering capacity be reallocated?
 
-{{PROJECT_PURPOSE_PARAGRAPH}}
+This project centralizes disconnected transaction records into an optimized analytical model. By uncovering granular performance metrics, it empowers leadership to implement data-driven capacity scheduling, streamline ticket routing, and restore SLA accountability.
 
 ### 👤 Who is this project for?
 
-✔️ {{AUDIENCE_1}} - {{AUDIENCE_1_REASON}}
+✔️ **IT Support Director** - Needs a macro-level overview of overall system health, global operational throughput, and high-level SLA metrics to justify corporate resource distribution and headcount budgets.
 
-✔️ {{AUDIENCE_2}} - {{AUDIENCE_2_REASON}}
+✔️ **Helpdesk & Queue Managers** - Require granular tracking of specific functional queues (e.g., Technical Support, HR, Customer Service) to balance technician workloads, detect aging items, and enforce team accountability.
 
-✔️ {{AUDIENCE_3}} - {{AUDIENCE_3_REASON}}
+✔️ **Regional Operations Leads** - Need localized spatial and country-specific insights to address regional process gaps and resolve capacity disparities between countries.
 
 ---
 
@@ -168,51 +168,51 @@ This project followed the Design Thinking framework across 3 main steps: Empathi
 
 | Question | Answer |
 |---|---|
-| **Who views this dashboard?** | {{STAKEHOLDER}} |
-| **What problem does it solve?** | {{PROBLEM_SOLVED}} |
-| **When & where is it used?** | {{USAGE_CONTEXT}} |
-| **Why is this analysis needed?** | {{WHY_NEEDED}} |
-| **How do they decide?** | {{HOW_DECIDE}} |
-| **Pains** | {{PAINS}} |
-| **Gains** | {{GAINS}} |
-| **Key Questions to Answer** | • {{KEY_Q1}}<br>• {{KEY_Q2}}<br>• {{KEY_Q3}}<br>• {{KEY_Q4}}<br>• {{KEY_Q5}} |
+| **Who views this dashboard?** | IT Support Director and Operations Managers |
+| **What problem does it solve?** | Resolves high SLA breach rates, excessive resolution lag, and poor visibility across decentralized technical queues. |
+| **When & where is it used?** | Reviewed weekly during cross-department operational updates and utilized daily via workstations for active workload tracking. |
+| **Why is this analysis needed?** | High volume combined with unmonitored ticket lifecycles degrades employee productivity and compromises service quality. |
+| **How do they decide?** | By isolating top breach queues, identifying regional performance delays, and reallocating technicians based on type-specific volume. |
+| **Pains** | A critical 61.66% SLA breach rate, unquantified ticket aging in low-priority tiers, and isolated functional queues. |
+| **Gains** | Centralized end-to-end performance tracking, standardized metrics, and granular action paths via interactive drill-through views. |
+| **Key Questions to Answer** | • What is the overall intake trend and monthly volume of incoming helpdesk tickets?<br>• Which queues and issue categories act as the primary drivers of SLA breaches?<br>• How do resolution times (MTTR) distribute across priority levels and request types?<br>• Are there operational or capacity imbalances across different days of the week?<br>• Which geographic regions exhibit critical resolution lag and require workflow audits? |
 
 ### 2️⃣ Define Point of View - Choosing the Right Angles
 
 | Point of View | Description | Why the stakeholder cares |
 |---|---|---|
-| **{{POV_1}}** | {{POV_1_DESC}} | {{POV_1_WHY}} |
-| **{{POV_2}}** | {{POV_2_DESC}} | {{POV_2_WHY}} |
-| **{{POV_3}}** | {{POV_3_DESC}} | {{POV_3_WHY}} |
+| **Operational Health Perspective** | Focuses on tracking macro system performance metrics including total volume, system MTTR, and MoM% workload variations. | Essential for understanding structural capacity stability and determining if systemic adjustments are required. |
+| **Compliance & Workflow Audit** | Targets the distribution of SLA breaches across structural attributes such as ticket priorities, types, and operational queues. | Crucial for isolating explicit failure points (e.g., HR queue's 88.78% breach rate) to execute process engineering. |
+| **Geographic Efficiency Mapping** | Assesses country-level operational performance, isolating localized throughput variations and cross-border volume imbalances. | Identifies specific regional resource constraints and enables the transfer of efficient models (e.g., Austria) to slower regions. |
 
 **Northstar Metrics:**
 
 | Northstar 1 | Northstar 2 |
 |---|---|
-| **{{NORTHSTAR_1_NAME}}** | **{{NORTHSTAR_2_NAME}}** |
-| Formula: `{{NORTHSTAR_1_FORMULA}}` | Formula: `{{NORTHSTAR_2_FORMULA}}` |
-| Success when: {{NORTHSTAR_1_SUCCESS}} | Success when: {{NORTHSTAR_2_SUCCESS}} |
-| Why this metric: {{NORTHSTAR_1_WHY}} | Why this metric: {{NORTHSTAR_2_WHY}} |
+| **Mean Time To Resolution (MTTR)** | **SLA Breach Rate (%)** |
+| Formula: `AVERAGE(Fact_Ticket[Resolution Days])` | Formula: `DIVIDE(CALCULATE(COUNT(Fact_Ticket[Ticket ID]), Fact_Ticket[Is Breached]=1), COUNT(Fact_Ticket[Ticket ID]), 0)` |
+| Success when: System MTTR scales below the 2.50-day operational target. | Success when: Overall SLA breaches fall from 61.66% to under a 15.0% ceiling. |
+| Why this metric: Represents the primary indicator of helpdesk response velocity and overall operational throughput. | Why this metric: Directly quantifies support delivery reliability and compliance with enterprise service agreements. |
 
 ### 3️⃣ Ideate - Structuring the Dashboard
 
-| | **Page 1: {{PAGE_1_NAME}}** | **Page 2: {{PAGE_2_NAME}}** | **Page 3: {{PAGE_3_NAME}}** |
+| | **Page 1: Helpdesk Overview** | **Page 2: Ticket Types & Queues** | **Page 3: Resolution & Spatial Insights** |
 |---|---|---|---|
-| **Layer 0 (Scorecards)** | {{P1_LAYER0}} | {{P2_LAYER0}} | {{P3_LAYER0}} |
-| **Layer 1 (1-dimension breakdown)** | {{P1_LAYER1}} | {{P2_LAYER1}} | {{P3_LAYER1}} |
-| **Layer 2 (2-dimension breakdown)** | {{P1_LAYER2}} | {{P2_LAYER2}} | {{P3_LAYER2}} |
+| **Layer 0 (Scorecards)** | Total Tickets, MTTR, SLA Breach %, Target Comparisons, MoM % growth rates. | Ticket Volume by Category, Active Queue Distribution counts. | Average Daily Ticket counts, Total Open/Closed metrics. |
+| **Layer 1 (1-dimension breakdown)** | Monthly incoming ticket intake volume trends, Ticket volume distribution by Priority. | Top 5 Primary Ticket Tags, Overall SLA Breach volumes by Day of the Week. | Total Tickets grouped by Year, Country-level spatial volume map layouts. |
+| **Layer 2 (2-dimension breakdown)** | Ticket volume MoM% growth matrices distributed simultaneously by Ticket Type. | Joint Queue Performance Matrix (MTTR vs SLA Breach Rate), Queue Compliance comparisons. | Two-dimensional Calendar Heatmaps (Day x Month), Type × Country MTTR performance grids. |
 
 ---
 
 ## ⚒️ Main Process
 
-1️⃣ **Connect & Load Data** - {{STEP_1_DESC}}
+1️⃣ **Connect & Load Data** - Establishes automated data connections to the raw Excel workbook, validates data type mappings for regional datetime configurations, and loads the data into the Power Query environment.
 
-2️⃣ **Data Modeling** - {{STEP_2_DESC}}
+2️⃣ **Data Modeling** - Executes the unpivoting of the 8 disparate horizontal tag structures, runs duplicate extraction routines to create clean lookup dimensions, builds a many-to-many bridge junction table, and maps all relationships into a highly efficient Star Schema.
 
-3️⃣ **DAX Measures** - {{STEP_3_DESC}}
+3️⃣ **DAX Measures** - Engineers explicit, calculated metrics to evaluate total transaction counts, calculated network resolution durations, dynamic Month-over-Month volume variances, and strict conditional logic boundaries for SLA breach tracking.
 
-4️⃣ **Power BI Visualization** - {{STEP_4_DESC}}
+4️⃣ **Power BI Visualization** - Structures the report interface utilizing advanced interaction features, including dynamic bookmark-driven sliding filter panels, customized informational tooltips, and complete cross-page drill-through evaluation tables.
 
 ---
 
