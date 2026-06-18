@@ -210,7 +210,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 
 ### 3️⃣ Ideate - Structuring the Dashboard
 
-| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution & Locations** |
+| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3 & 4: Resolution & Locations** |
 |---|---|---|---|
 | **Top Section (Key Numbers)** | Total tickets, average speed, breach %. | Total by type, top categories. | Daily average, average resolution time. |
 | **Middle Section (1 dimension breakdown)** | Monthly trend line, breakdown by priority. | Top 5 categories, breach % by day of week. | Geographic map, team comparison. |
