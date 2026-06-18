@@ -178,7 +178,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
 
-### 1️⃣ Understanding the Users
+### 1️⃣ Stage 1: Empathize
 
 | Question | Answer |
 |---|---|
@@ -191,7 +191,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **What will help them?** | • Everything in one dashboard.<br>• Clear data showing exact bottlenecks.<br>• Clear evidence for business decisions.<br>• Quick way to spot and fix problems. |
 | **Key Questions They Need Answered** | • How many tickets total? How fast are we fixing them?<br>• Which team misses most deadlines?<br>• Which type of ticket takes longest?<br>• Which country is slowest?<br>• Is ticket volume growing or shrinking? |
 
-### 2️⃣ Main Dashboard Perspectives (What to Show)
+### 2️⃣ Stage 2: Define POV 
 
 | Perspective | What It Shows | Why It Matters |
 |---|---|---|
@@ -208,7 +208,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | Goal: Get below 50% and keep dropping month by month. | Goal: Keep under 3 days, ideally trend toward 2.5 days. |
 | Why it matters: Shows how often we fail customers. High numbers mean customers are unhappy and lose trust. | Why it matters: Shows how fast the team actually works. If this is too high, everything else fails. |
 
-### 3️⃣ How We Organized the Dashboard Pages
+### 3️⃣ Stage 3: Ideate
 
 | | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution & Locations** |
 |---|---|---|---|
