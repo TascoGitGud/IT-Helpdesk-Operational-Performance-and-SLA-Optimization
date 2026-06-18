@@ -20,15 +20,15 @@ _An interactive dashboard built to help IT managers track support tickets, find 
 ---
 
 ## 📑 Table of Contents
-1. [📌 Background & Goals](#-background--goals)
-2. [📂 About the Data](#-about-the-data)
-3. [🧠 How We Built It](#-how-we-built-it)
-4. [📊 Key Findings](#-key-findings--visualizations)
-5. [🔎 Final Conclusion & What To Do](#-final-conclusion--recommendations)
+1. [📌 Background & Overview](#-background--overview)
+2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)
+3. [🧠 Design Thinking Process](#-design-thinking-process)
+4. [📊 Key Insights & Visualizations](#-key-insights--visualizations)
+5. [🔎 Final Conclusion & Recommendations](#-final-conclusion--recommendations)
 
 ---
 
-## 📌 Background & Goals
+## 📌 Background & Overview
 
 ### What Problem Are We Solving?
 
@@ -52,7 +52,7 @@ The goal is to have **one central dashboard** that shows all this information cl
 
 ---
 
-## 📂 About the Data
+## 📂 Dataset Description & Data Structure
 
 ### Data Source & Size
 * **Where it comes from:** IT Support Ticket System
@@ -174,7 +174,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
   <img src="Images/data_model.png" width="80%">
 </p>
 
-## 🧠 How We Planned This Dashboard
+## 🧠 Design Thinking Process
 
 We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
 
@@ -230,7 +230,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 
 ---
 
-## 📊 Key Insights & Findings
+## 📊 Key Insights & Visualizations
 
 ### 🔍 Dashboard Features
 
