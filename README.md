@@ -38,7 +38,7 @@ The IT Support Director and Operations Managers need a dashboard to answer 3 mai
 
 ✔️ **Service Efficiency (MTTR):** What is our average time to resolve tickets, and which categories or queues face systemic bottlenecks?
 
-✔️ **SLA Compliance:** What factors are driving our severe 61.66% SLA breach rate, and how does performance vary across days of the week?
+✔️ **SLA Compliance:** What factors are driving our severe SLA breach rate, and how does performance vary across days of the week?
 
 ✔️ **Resource & Geographic Optimization:** How are ticket workloads distributed among our 10 operational countries, and where should support engineering capacity be reallocated?
 
@@ -173,7 +173,7 @@ This project followed the Design Thinking framework across 3 main steps: Empathi
 | **When & where is it used?** | Reviewed weekly during cross-department operational updates and utilized daily via workstations for active workload tracking. |
 | **Why is this analysis needed?** | High volume combined with unmonitored ticket lifecycles degrades employee productivity and compromises service quality. |
 | **How do they decide?** | By isolating top breach queues, identifying regional performance delays, and reallocating technicians based on type-specific volume. |
-| **Pains** | A critical 61.66% SLA breach rate, unquantified ticket aging in low-priority tiers, and isolated functional queues. |
+| **Pains** | A critical SLA breach rate, unquantified ticket aging in low-priority tiers, and isolated functional queues. |
 | **Gains** | Centralized end-to-end performance tracking, standardized metrics, and granular action paths via interactive drill-through views. |
 | **Key Questions to Answer** | • What is the overall intake trend and monthly volume of incoming helpdesk tickets?<br>• Which queues and issue categories act as the primary drivers of SLA breaches?<br>• How do resolution times (MTTR) distribute across priority levels and request types?<br>• Are there operational or capacity imbalances across different days of the week?<br>• Which geographic regions exhibit critical resolution lag and require workflow audits? |
 
@@ -191,7 +191,7 @@ This project followed the Design Thinking framework across 3 main steps: Empathi
 |---|---|
 | **Mean Time To Resolution (MTTR)** | **SLA Breach Rate (%)** |
 | Formula: `AVERAGE(Fact_Ticket[Resolution Days])` | Formula: `DIVIDE(CALCULATE(COUNT(Fact_Ticket[Ticket ID]), Fact_Ticket[Is Breached]=1), COUNT(Fact_Ticket[Ticket ID]), 0)` |
-| Success when: System MTTR scales below the 2.50-day operational target. | Success when: Overall SLA breaches fall from 61.66% to under a 15.0% ceiling. |
+| Success when: System MTTR scales below the 2.50-day operational target. | Success when: Overall SLA breaches fall to under a 15.0% ceiling. |
 | Why this metric: Represents the primary indicator of helpdesk response velocity and overall operational throughput. | Why this metric: Directly quantifies support delivery reliability and compliance with enterprise service agreements. |
 
 ### 3️⃣ Ideate - Structuring the Dashboard
