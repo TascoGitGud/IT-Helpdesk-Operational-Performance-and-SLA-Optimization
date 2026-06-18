@@ -176,51 +176,49 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 ## 🧠 Design Thinking Process
 
-We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
+This project followed the Design Thinking framework across 3 main steps: Empathize, Define Point of View, and Ideate.
+
+> 📄 For the full Design Thinking breakdown, see [Fashion Marketing & Sales Analysis - Design Thinking.pdf](Fashion-Marketing-Sales-Analysis-Design-Thinking.pdf)
 
 ### 1️⃣ Empathize - Understanding the Stakeholder
 
 | Question | Answer |
 |---|---|
-| **Who looks at this dashboard?** | IT Managers, Service Desk Leads, and Executives |
-| **What problem does it solve?** | Track helpdesk performance, identify stuck tickets, know which queues miss deadlines, understand resolution times, and whether performance is improving |
-| **When is it used?** | Daily to monitor new tickets and SLA; Weekly to review team performance; On laptop or big screen in meetings |
-| **Why do they need it?** | SLA breach rate is too high but we don't know where to start fixing it. Need data evidence to report to leadership. |
-| **How will they use it to make decisions?** | Look at MTTR and % SLA Breach, compare between queues/ticket types/regions, then reallocate staff or adjust processes |
-| **What problems do they face now?** | • Don't know where tickets are stuck<br>• Hard to compare performance between queues and countries<br>• SLA breach is high but root cause is unclear<br>• Can't show leadership why more resources are needed |
-| **What will help them?** | • See bottleneck instantly in one view<br>• Allocate staff correctly based on data<br>• Reduce SLA breach systematically |
-| **Key Questions They Need Answered** | • What are total tickets and current MTTR?<br>• Which queue misses most deadlines?<br>• Which ticket type takes longest to resolve?<br>• Which country/region has worst performance?<br>• Are monthly ticket volumes growing or shrinking? |
-
----
+| **Who views this dashboard?** | Marketing Manager, Sales Manager, CEO/Board of Directors |
+| **What problem does it solve?** | Need a single dashboard to monitor business and marketing performance — know which campaigns are profitable, which channels work, and which products to prioritize |
+| **When & where is it used?** | Daily for spending & revenue tracking; weekly for campaign reviews; on laptop or large screen during meetings |
+| **Why is this analysis needed?** | Marketing budget is limited — need to know if every dollar spent is generating profit and avoid pouring money into inefficient campaigns or products |
+| **How do they decide?** | By comparing ROAS and Profit Margin across campaigns, channels, and products — then deciding to scale or cut |
+| **Pains** | Data is scattered across Facebook Ads, order systems, and manual Excel sheets; hard to compare SKU-level and channel-level performance |
+| **Gains** | Full picture in one screen; faster budget allocation decisions; reduced marketing waste |
+| **Key Questions to Answer** | • What is total revenue and profit this month?<br>• Which campaigns have the best ROAS?<br>• Is Ads or Direct Sales more profitable?<br>• Which products/categories have low or negative margin?<br>• What % of budget has been spent — and is it generating profit? |
 
 ### 2️⃣ Define Point of View - Choosing the Right Angles
 
-| Perspective | What It Shows | Why It Matters |
+| Point of View | Description | Why the stakeholder cares |
 |---|---|---|
-| **Overview** | Total KPIs: ticket count, MTTR, SLA breach % over time | Establish foundational baseline view of system health before diving into details |
-| **Ticket Types** | Analysis by ticket type, priority, and tags | Show which work types cause most problems and SLA breaches |
-| **Resolution Times** | MTTR by type, priority, day/month; ticket aging patterns | Identify where time is being wasted and which factors slow things down |
-| **Queue Performance** | Compare speed and compliance between teams | Show exactly which queues need more staff or training |
-| **Locations** | Performance by country and region | Identify geographic gaps and opportunities for knowledge-sharing |
+| **Overview** | Total revenue, costs, profit, and ROAS for the month | To see the big picture before diving into details |
+| **Campaign** | ROAS, CPC, CPM, CTR, Impressions per campaign | To know which campaigns to scale or cut |
+| **Channel** | Ads Sales vs Direct Sales by revenue, margin, and region | To know which channel drives more profitable revenue |
+| **SKU** | Revenue, profit, and margin by category and product | To know which products to grow and which to fix |
 
 **Northstar Metrics:**
 
-| Metric 1 | Metric 2 |
+| Northstar 1 | Northstar 2 |
 |---|---|
-| **% SLA Breach** | **MTTR (Mean Time To Resolve)** |
-| **Formula:** (Tickets resolved late) / (Total tickets) × 100 | **Formula:** Sum of all resolution times / Number of tickets |
-| **Goal:** Drop below 50% and keep declining monthly | **Goal:** Trend downward monthly, stay under 3-day target |
-| **Why it matters:** Directly reflects service quality; high breach = poor customer experience and lost trust | **Why it matters:** Measures actual resolution speed; excessive MTTR is the root cause of SLA breaches |
-
----
+| **ROAS** | **Profit Margin (%)** |
+| Formula: `ROAS = Total Ads Revenue / Total Marketing Cost` | Formula: `Profit Margin = Gross Profit / Net Revenue` |
+| Success when: ROAS > 10 and growing vs. prior period | Success when: Profit Margin stays stable or improves alongside revenue growth |
+| Why this metric: Directly measures how much revenue each dollar of ad spend returns — the core signal for budget decisions | Why this metric: High revenue doesn't guarantee profit — ensures growth is healthy, not just volumetric |
 
 ### 3️⃣ Ideate - Structuring the Dashboard
 
-| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution** | **Page 4: Queue** | **Page 5: Locations** |
-|---|---|---|---|---|---|
-| **Layer 0 (Scorecard - Most Important)** | Total Ticket, MTTR, Avg Monthly Tickets, % SLA Breach | Total by Type, Top Categories | Avg Daily Tickets, % SLA Breach | Metric Selector (Total/Breach/MTTR) | Lowest MTTR Country, Most Popular Country |
-| **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top 5 Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country (map); Avg Daily Tickets by Resolution Days |
-| **Layer 2 (2-dimension breakdown)** | Calendar heatmap by day; Ticket MoM% by Type | Top 5 Queue × Priority (showing SLA Breach %); SLA Breach % by Day of Week | Heatmap: Ticket by Day Name × Month Name | Queue Performance Matrix (MTTR × SLA Breach %); Queue Detail Table | MTTR by Type × Country (heatmap); Total Ticket by Year |
+| Layer | Overview | Campaign | Channel | SKU |
+|---|---|---|---|---|
+| **Layer 0 (Scorecards)** | Total Revenue, Total Orders, Marketing Cost, ROAS, Total Units Sold | Total Revenue, Total Orders, Marketing Cost, ROAS, Total Units Sold | Total Revenue, Total Orders, Marketing Cost, ROAS, Total Units Sold | Total Revenue, Total Orders, Marketing Cost, ROAS, Total Units Sold |
+| **Layer 1 (1-dimension)** | Revenue & Cost by week/day; Profit & Revenue trend; Ads vs Direct ratio | ROAS by week/day; CPC & CPM by day; Impressions & CTR | Revenue by day (Ads vs Direct); Revenue by Customer Tier; ROAS by channel | Profit & Revenue by category; Profit Margin by category; Ads Revenue by category |
+| **Layer 2 (2-dimension)** | Marketing Cost vs Revenue by campaign; % Budget used | Weekly table: ROAS, Spend, Impressions, CTR, CPC; Metric selector | Table: Ads/Direct × Revenue, Orders, Margin, Units, Contribution; Revenue & Profit by product | SKU table: Spend, Profit, ROAS, ROI, Revenue Contribution; Profit Margin × Gross Profit matrix |
+| **What's missing?** | MoM comparison | ROAS per individual campaign | New vs. returning customers | Inventory vs. sales crosscheck |
 
 ---
 
