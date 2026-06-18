@@ -182,39 +182,55 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 
 | Question | Answer |
 |---|---|
-| **Who looks at this dashboard?** | IT Managers, Service Desk Leads, and Executives. |
-| **What problem does it solve?** | Shows where tickets are getting stuck, why deadlines are missed, and which teams need help. |
-| **When is it used?** | IT Managers check it daily. Executives review it weekly in meetings. |
-| **Why do they need it?** | Leadership complains about missed deadlines but doesn't know why. Teams don't know where to improve. Need clear data proof to get budget for hiring or training. |
-| **How will they use it to make decisions?** | Compare team performance, see which regions are slow, understand which ticket types take longest, decide how to allocate staff. |
-| **What problems do they face now?** | • Reports scattered across different systems.<br>• No clear view of which teams are struggling.<br>• High missed deadlines but no proof of why.<br>• Hard to show executive why more resources are needed. |
-| **What will help them?** | • Everything in one dashboard.<br>• Clear data showing exact bottlenecks.<br>• Clear evidence for business decisions.<br>• Quick way to spot and fix problems. |
-| **Key Questions They Need Answered** | • How many tickets total? How fast are we fixing them?<br>• Which team misses most deadlines?<br>• Which type of ticket takes longest?<br>• Which country is slowest?<br>• Is ticket volume growing or shrinking? |
+| **Who looks at this dashboard?** | IT Managers, Service Desk Leads, and Executives |
+| **What problem does it solve?** | Track helpdesk performance, identify stuck tickets, know which queues miss deadlines, understand resolution times, and whether performance is improving |
+| **When is it used?** | Daily to monitor new tickets and SLA; Weekly to review team performance; On laptop or big screen in meetings |
+| **Why do they need it?** | SLA breach rate is too high but we don't know where to start fixing it. Need data evidence to report to leadership. |
+| **How will they use it to make decisions?** | Look at MTTR and % SLA Breach, compare between queues/ticket types/regions, then reallocate staff or adjust processes |
+| **What problems do they face now?** | • Don't know where tickets are stuck<br>• Hard to compare performance between queues and countries<br>• SLA breach is high but root cause is unclear<br>• Can't show leadership why more resources are needed |
+| **What will help them?** | • See bottleneck instantly in one view<br>• Allocate staff correctly based on data<br>• Reduce SLA breach systematically |
+| **Key Questions They Need Answered** | • What are total tickets and current MTTR?<br>• Which queue misses most deadlines?<br>• Which ticket type takes longest to resolve?<br>• Which country/region has worst performance?<br>• Are monthly ticket volumes growing or shrinking? |
+
+---
 
 ### 2️⃣ Define Point of View - Choosing the Right Angles
 
 | Perspective | What It Shows | Why It Matters |
 |---|---|---|
-| **Overall Health** | Total tickets, average speed, total breach rate, monthly trends | Shows the big picture first before looking at details. |
-| **Ticket Types & Categories** | How many of each type? How long does each type take? Which categories are fastest/slowest? | Shows which work is causing problems and where to focus. |
-| **Teams & Regions** | How fast is each team? How fast is each country? Who's doing well, who's struggling? | Shows exactly where to hire more staff or provide training. |
+| **Overview** | Total KPIs: ticket count, MTTR, SLA breach % over time | Establish foundational baseline view of system health before diving into details |
+| **Ticket Types** | Analysis by ticket type, priority, and tags | Show which work types cause most problems and SLA breaches |
+| **Resolution Times** | MTTR by type, priority, day/month; ticket aging patterns | Identify where time is being wasted and which factors slow things down |
+| **Queue Performance** | Compare speed and compliance between teams | Show exactly which queues need more staff or training |
+| **Locations** | Performance by country and region | Identify geographic gaps and opportunities for knowledge-sharing |
 
 **Northstar Metrics:**
 
 | Metric 1 | Metric 2 |
 |---|---|
-| **% Missed Deadlines (SLA Breach %)** | **Average Time to Fix (MTTR)** |
-| How to calculate: Count tickets resolved late ÷ total tickets × 100 | How to calculate: Add up all resolution times ÷ number of tickets |
-| Goal: Get below 50% and keep dropping month by month. | Goal: Keep under 3 days, ideally trend toward 2.5 days. |
-| Why it matters: Shows how often we fail customers. High numbers mean customers are unhappy and lose trust. | Why it matters: Shows how fast the team actually works. If this is too high, everything else fails. |
+| **% SLA Breach** | **MTTR (Mean Time To Resolve)** |
+| **Formula:** (Tickets resolved late) / (Total tickets) × 100 | **Formula:** Sum of all resolution times / Number of tickets |
+| **Goal:** Drop below 50% and keep declining monthly | **Goal:** Trend downward monthly, stay under 3-day target |
+| **Why it matters:** Directly reflects service quality; high breach = poor customer experience and lost trust | **Why it matters:** Measures actual resolution speed; excessive MTTR is the root cause of SLA breaches |
+
+**Growth Formula by Perspective:**
+
+| Perspective | Growth Formula Breakdown |
+|---|---|
+| **Overview** | SLA Breach total by month |
+| **Ticket Types** | SLA Breach by ticket type & priority |
+| **Resolution Times** | MTTR average by month; MTTR by ticket type & priority |
+| **Queue** | SLA Breach by queue; MTTR by queue |
+| **Locations** | SLA Breach by country; MTTR by country |
+
+---
 
 ### 3️⃣ Ideate - Structuring the Dashboard
 
-| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3 & 4: Resolution & Locations** |
-|---|---|---|---|
-| **Top Section (Key Numbers)** | Total tickets, average speed, breach %. | Total by type, top categories. | Daily average, average resolution time. |
-| **Middle Section (1 dimension breakdown)** | Monthly trend line, breakdown by priority. | Top 5 categories, breach % by day of week. | Geographic map, team comparison. |
-| **Bottom Section (2 dimension breakdown)** | Growth rates across categories and time. | Comparison: category × priority. | Calendar heatmap (day × month), Team Matrix (speed vs breach %), Type × Country performance. |
+| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution Times** | **Page 4: Queue** | **Page 5: Locations** |
+|---|---|---|---|---|---|
+| **Layer 0 (Scorecard - Most Important)** | Total Ticket, MTTR, Avg Monthly Tickets, % SLA Breach | Total by Type, Top Categories | Avg Daily Tickets, % SLA Breach | Metric Selector (Total/Breach/MTTR) | Lowest MTTR Country, Most Popular Country |
+| **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top 5 Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country (map); Avg Daily Tickets by Resolution Days |
+| **Layer 2 (2-dimension breakdown)** | Calendar heatmap by day; Ticket MoM% by Type | Top 5 Queue × Priority (showing SLA Breach %); SLA Breach % by Day of Week | Heatmap: Ticket by Day Name × Month Name | Queue Performance Matrix (MTTR × SLA Breach %); Queue Detail Table | MTTR by Type × Country (heatmap); Total Ticket by Year |
 
 ---
 
