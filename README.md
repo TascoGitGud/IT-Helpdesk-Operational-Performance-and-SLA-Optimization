@@ -32,8 +32,6 @@ _An interactive enterprise-grade analytical dashboard engineered using an optimi
 
 ### Objective
 
-In modern large-scale corporate environments, an efficient IT service desk is crucial to safeguarding business continuity and employee productivity. As support organizations scale cross-border, tracking operational efficiency often becomes highly complex due to disconnected reporting mechanisms across separate tracking systems.
-
 The IT Manager (supported by the Service Desk Lead and Executive Board) needs a dashboard to answer 3 main questions:
 
 ✔️ **Operational Baseline:** What are our current total ticket volumes, baseline resolution speeds, and overall monthly influx trends?
