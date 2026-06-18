@@ -177,7 +177,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 ## 🧠 Design Thinking Process
 
 We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
-> 📄 For the full Design Thinking breakdown, see [IT Helpdesk Analysis - Design Thinking.pdf](IT%20Helpdesk%20Analysis%20-%20Design%20Thinking.pdf)
+> 📄 For the full Design Thinking breakdown, see [IT-Helpdesk-Analysis-Design-Thinking.pdf](IT-Helpdesk-Analysis-Design-Thinking.pdf)
 
 ### 1️⃣ Empathize - Understanding the Stakeholder
 
