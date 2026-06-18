@@ -4,7 +4,7 @@
 ---
 
 <p align="center">
-  <img src="Images/banner.png" width="100%">
+  <img src="banner.jpg" width="100%">
 </p>
 
 # 📊 {{PROJECT_TITLE}} | Power BI
