@@ -252,66 +252,39 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 
 ---
 
-#### 1️⃣ Page 1 - Helpdesk Overview
+#### 1️⃣ Page 1 - Overview
 
 <p align="center">
   <img src="Images/Overview.png" width="100%">
 </p>
 
-**What The Data Shows:**
+📌 **Analysis 1:**
 
-The helpdesk processed **11,923 total tickets** (up 6.3% from last month) with an average resolution time of **2.82 days** - right at the deadline limit. The biggest concern: **61.66% of tickets missed their deadline** - almost 2 out of 3 tickets were resolved late. 
+- **Observation:** The helpdesk handled **11,923 total tickets** (+6.3% vs. last month) with an MTTR of **2.82 days** - right at the SLA target boundary. The most alarming metric is **% SLA Breach at 61.66%**, meaning nearly 2 in 3 tickets are resolved outside the agreed timeframe. Monthly ticket volume fluctuated around an average of **701 tickets/month**, dipping to a low of 617 in January 2025 before recovering to 707 in May 2025. By priority, **medium tickets dominate (41.53%)**, followed by high (38.34%) and low (20.13%). All ticket types showed positive MoM growth (5.85%–6.71%), indicating consistently rising workload.
 
-Monthly ticket volume averaged **701 tickets/month** with a low of 617 in January 2025 and high of 707 in May 2025. By priority: **Medium tickets are 41.53%** of work, **High is 38.34%**, and **Low is 20.13%**. Every ticket type is growing **5.8-6.7% each month**, showing consistent increase in work.
-
-**Why This Matters:**
-- A 61.66% missed deadline rate is a serious problem. Nearly 2 in 3 tickets are late - this is not acceptable.
-- The 2.82 day average is exactly at the 3-day deadline. **Zero buffer** for any delays.
-- Ticket volume growing 6% monthly means workload is increasing. If nothing changes, backlogs will get worse.
-- So many "High" priority tickets (38%) suggests teams might be over-classifying urgency - not everything can be urgent.
-
-**What To Do:**
-- 🔴 **CRITICAL:** The 61.66% breach rate needs immediate investigation. Pick one team (worst performer), take 20 recent tickets, and trace where time is lost. Is it waiting for customer info? Unclear requirements? System problems? Staffing? Once you know the reason, you can fix it.
-- 🟡 **Check the January dip:** Why did volume drop to 617 in January (lowest month)? Was it holiday break? System issue? Understanding this helps validate data quality.
-- 🟡 **Plan for growth:** 6% monthly growth means 15-20% higher volume by end of year. Start hiring and planning now.
-- 🟢 **Review priority classification:** Too many tickets marked "High" priority. Maybe create better guidelines so teams classify correctly.
+- **Recommendation:**
+  - 🔴 **SLA Breach at 61.66% is critical and requires immediate action.** Over half of all tickets are resolved late - this is a systemic issue, not an isolated one. A root-cause review across queues and ticket types is the first priority.
+  - 🟡 **Investigate the Jan 2025 volume drop (617 tickets).** An unusual dip may indicate underreporting, a system issue, or a genuine reduction in requests - understanding the cause helps validate data reliability.
+  - 🟢 **Monitor the MoM growth trend closely.** All ticket types are growing at ~6% monthly - capacity planning should be adjusted proactively before volume outpaces team bandwidth.
 
 ---
 
-#### 2️⃣ Page 2 - Ticket Types & Categories
+#### 2️⃣ Page 2 - Ticket Types
 
 <p align="center">
   <img src="Images/Ticket_Types.png" width="100%">
 </p>
 
-**What The Data Shows:**
+📌 **Analysis 2:**
 
-**By Type:** **Incidents** are 38.93% of tickets, **Requests** are 29.34%, **Problems** are 20.95%, and **Changes** are 10.78%.
+- **Observation:** **Incident tickets lead at 38.93%** of total volume, followed by Request (29.34%), Problem (20.95%), and Change (10.78%). By primary tag, **Technical issues are the most frequent (3.1K)**, with Security second (2.0K) - both also showing the highest ticket growth rates (6.07% and 5.89%). Among queues, **Customer Service has the highest SLA Breach at 81.87%** despite not being the busiest queue, while **Technical Support - the largest queue (3,412 tickets) - has a relatively lower breach rate at 42.09%**. SLA Breach rates are consistently high across all days of the week (60–63%), with **Sunday being the worst at 63.06%**.
 
-**By Category:** **Technical issues** are most common (3,100+ tickets), **Security** is second (2,000+ tickets). Both are growing faster than other categories (5.9-6.1% monthly).
+- **Recommendation:**
+  - 🔴 **Customer Service queue needs urgent attention.** 81.87% SLA Breach on 1,859 tickets is the worst among high-volume queues - review staffing levels, escalation paths, and resolution workflows specific to this queue.
+  - 🟡 **Weekend SLA performance is slightly worse - consider weekend coverage.** Sunday breach rate (63.06%) is the highest of the week, suggesting support capacity drops on weekends relative to incoming volume.
+  - 🟢 **Technical Support is managing scale relatively well (42.09% breach).** As the largest queue, its comparatively lower breach rate suggests better processes - these practices should be documented and replicated in underperforming queues.
 
-**By Team Performance:**
-- **Customer Service:** 81.87% missed deadline rate (1,859 tickets) ❌ WORST
-- **Human Resources:** 88.78% missed rate (205 tickets) ❌ VERY BAD
-- **General Inquiry:** 83.33% missed rate (168 tickets) ❌ BAD  
-- **Technical Support:** 42.09% missed rate (3,412 tickets) ✅ BEST
-- **Service Outages:** 30.09% missed rate ✅ BEST
-
-**By Day of Week:** Missed rates are **60-63% every day**. **Sunday is worst at 63.06%**. No day is significantly better.
-
-**Why This Matters:**
-- **This is PROOF that the problem is NOT too much work - it's BAD PROCESS.** Technical Support handles 3,412 tickets but only misses 42% of deadlines. HR handles 205 but misses 89%. Same company, same rules, completely different results. If HR is bad at managing 205 tickets, it's a process problem, not workload.
-- Customer Service is huge (1,859 tickets) AND doing terribly (81.87% miss rate). This is multiple problems combined.
-- Sunday being worse suggests weekend staffing is too low.
-- Technical and Security are growing faster - might need more specialists in these areas.
-
-**What To Do:**
-- 🔴 **Customer Service is your biggest target:** 1,859 tickets with 81.87% missed rate. Audit 20 recent tickets and understand: Are customer requirements unclear? Do they need multiple follow-ups? Is escalation path broken? Do they need more staff? Fix the root cause.
-- 🔴 **Human Resources is worst of all:** Only 205 tickets but 88.78% miss rate. This is NOT a workload problem. Either they don't have right skills, process is broken, or priority is wrong. Interview the team.
-- 🟡 **General Inquiry needs better definition:** "General" queues tend to be vague. What should go here? What should route elsewhere? Define it clearly so tickets get to right team faster.
-- 🟢 **Copy Technical Support's approach:** They handle most tickets cleanly. Ask them: How do you prioritize? What tools help? How do you escalate? Document it and train other teams.
-- 🟡 **Add weekend staff:** Even 1-2 more people on Sunday could reduce that 63% miss rate.
-- 🟢 **Watch fast-growing categories:** Hire specialists for Technical and Security if volume keeps growing.
+> 📋 For ticket-level detail by type, queue, and tag - use the **Drill Through** feature on any data point.
 
 ---
 
@@ -321,112 +294,50 @@ Monthly ticket volume averaged **701 tickets/month** with a low of 617 in Januar
   <img src="Images/Resolution_Times.png" width="100%">
 </p>
 
-**What The Data Shows:**
+📌 **Analysis 3:**
 
-**Overall:** Average daily tickets = **22.88**, average resolution time = **2.82 days**, missed deadline rate = **61.66%**.
+- **Observation:** Average Daily Tickets stand at **22.88** with an overall MTTR of **2.82 days** and SLA Breach at **61.66%**. Breaking down by ticket type, **Incident tickets have the highest average daily volume (8.9) but the lowest MTTR (2.7 days)**, suggesting the team prioritizes and resolves incidents quickly. **Request tickets take the longest (MTTR 2.9)** despite moderate daily volume (6.7). By priority, **low-priority tickets account for the largest MTTR share (44.44%)**, indicating they are frequently deprioritized and left to age. The heatmap shows ticket volume is heaviest in the **Sep–Dec 2024 period**, with lighter loads in early 2024 and early 2025.
 
-**By Ticket Type:**
-- **Incidents:** 8.9 per day, **2.7 days to resolve** ✅ FASTEST - teams prioritize these
-- **Requests:** 6.7 per day, **2.9 days to resolve** ⚠️ SLOWEST
-- **Problems:** 4.6 per day, **2.75 days to resolve**
-- **Changes:** 2.7 per day, **2.8 days to resolve**
-
-**By Priority:**
-- **High:** 2.83 days (reasonable)
-- **Medium:** 2.81 days (reasonable)
-- **Low:** Accounts for **44.44% of total time** 🚨 BIG PROBLEM
-
-This means **low-priority tickets get ignored until they're about to miss deadline**, wasting a lot of team time.
-
-**Timeline:** Heaviest volume **Sep-Dec 2024**. Lighter in early 2024 and early 2025.
-
-**Why This Matters:**
-- **Request tickets (2.9 days) are using almost all the buffer.** Even a tiny delay pushes them past the 3-day deadline. Why are they slow? Do they need too many approvals? Are requirements unclear? Are they routed to the wrong team?
-- **Low-priority tickets at 44% of time is backwards.** They should be 15-20% of time. The pattern: ignore them, then panic when about to breach, then scramble to fix. This wastes time and stresses the team.
-- **Incidents are handled well (2.7 days) even though they sound complex.** This means the incident process works. Apply the same logic to Requests.
-
-**What To Do:**
-- 🔴 **Request tickets need a process overhaul:** They're the slowest (2.9 days) and common (6.7 per day). Shaving just 0.2 days off each = significant capacity saved. Questions: Do they need approval? Can you pre-approve common ones? Are requirements unclear? Create templates.
-- 🔴 **Stop ignoring low-priority tickets:** Set a rule: if a low-priority ticket hasn't been touched in 5 days, automatically escalate to Medium-priority. Prevents the "ignore then panic" cycle.
-- 🟢 **Study incident process:** It works. Fastest resolution (2.7) despite highest daily volume (8.9). Document the process: decision tree? escalation path? dedicated team? Apply to other types.
-- 🟢 **Preventive work:** If same issue keeps recurring, fix the root problem instead of just fixing tickets each time.
+- **Recommendation:**
+  - 🔴 **Low-priority tickets are aging unacceptably.** At 44.44% of MTTR distribution, low-priority tickets are contributing significantly to overall SLA breach - set maximum age thresholds to prevent indefinite deferral.
+  - 🟡 **Request-type tickets need process streamlining.** Highest MTTR (2.9 days) with substantial daily volume (6.7) - review whether request workflows have unnecessary approval steps causing delays.
+  - 🟢 **The incident handling model is working - replicate it.** Lowest MTTR (2.7) despite highest daily volume shows effective triage and escalation. Apply the same prioritization logic to Request and Problem queues.
 
 ---
 
-#### 4️⃣ Page 4 - Team Performance
+#### 4️⃣ Page 4 - Queue Performance
 
 <p align="center">
   <img src="Images/Queue_Performance.png" width="100%">
 </p>
 
-**What The Data Shows:**
+📌 **Analysis 4:**
 
-**Best Performing Teams** (Fast + Low Miss Rate):
-- **Service Outages:** 30.09% missed rate, 2.43 days average ✅ BEST
-- **Technical Support:** 42.09% missed rate, 2.65 days average ✅ GOOD
-- **IT Support:** 53.85% missed rate, 2.51 days average
+- **Observation:** The Queue Performance Matrix clearly separates queues into two clusters. **High-breach queues** (Human Resources 88.78%, General Inquiry 83.33%, Customer Service 81.87%) all show MTTR above 3.0 days - slow and non-compliant. **Low-breach queues** (Service Outages & Maintenance 30.09%, Technical Support 42.09%, IT Support 53.85%) resolve tickets faster (MTTR 2.43–2.65 days). **Technical Support is by far the highest-volume queue (3,412 tickets)** but maintains one of the best breach rates. The queue comparison chart confirms that SLA Compliant tickets dominate in Technical Support, while breach tickets dominate in HR and General Inquiry.
 
-**Worst Performing Teams** (Slow + High Miss Rate):
-- **Human Resources:** 88.78% missed rate, 3.34 days average ❌ WORST
-- **General Inquiry:** 83.33% missed rate, 3.29 days average ❌ BAD
-- **Customer Service:** 81.87% missed rate, 3.07 days average ❌ BAD
+- **Recommendation:**
+  - 🔴 **Human Resources queue is the worst performer (88.78% breach, MTTR 3.34).** With only 205 tickets, this is not a volume problem - it is a process or staffing problem. Immediate intervention is needed.
+  - 🟡 **General Inquiry (83.33% breach) likely lacks clear ownership.** Vague ticket categorization often leads to delays - define clear routing rules and assign dedicated owners for this queue.
+  - 🟢 **Use Technical Support and Service Outages as benchmarks.** Both handle meaningful volume with low breach rates - conduct a process audit on these queues and share best practices with underperforming ones.
 
-**Ticket Volume:**
-- **Technical Support** handles most by far: 3,412 tickets
-- **Customer Service:** 1,859 tickets
-- **General Inquiry:** only 168 tickets
-
-The key point: **Technical Support handles the most work but has the SECOND-BEST miss rate.** This proves volume is NOT the problem.
-
-**Why This Matters:**
-- **Two completely different clusters:** One group (Service Outages, Tech Support, IT Support) are both fast AND compliant. Another group (HR, General Inquiry, Customer Service) are both slow AND non-compliant. This is not random - something fundamental is different between them.
-- **Technical Support proves it's possible:** Handle 3,412 tickets (most of anyone) yet stay at 42% miss rate. If they can do it, others can too.
-- **Small teams fail too:** HR only has 205 tickets but 88.78% miss rate. Staffing is not the issue.
-
-**What To Do:**
-- 🔴 **Human Resources is your #1 priority:** Only 205 tickets but worst performance. (1) Interview the team - what's the biggest obstacle? (2) Compare their process to Technical Support - what are they doing differently? (3) Check if they're trained to handle their ticket types. (4) Look at last 10 tickets - where did time go?
-- 🔴 **General Inquiry needs reorganization:** "General" queues are vague. (1) Define what SHOULD go here. (2) What should route elsewhere? (3) Create clear rules. (4) Re-train team. (5) Better routing = tickets get to right team faster.
-- 🟡 **Customer Service needs dual fix:** Both volume issue (1,859 tickets) AND process issue (miss rate too high). (1) Check staffing vs. target. (2) If understaffed, hire. (3) Also audit process for inefficiencies.
-- 🟢 **Share best practices:** Have Service Outages and Technical Support teach other teams. What's working? What process steps are critical? Document and standardize.
+> 📋 Click any queue bar to drill through to individual ticket records for deeper investigation.
 
 ---
 
-#### 5️⃣ Page 5 - Geographic Performance
+#### 5️⃣ Page 5 - Locations
 
 <p align="center">
   <img src="Images/Locations.png" width="100%">
 </p>
 
-**What The Data Shows:**
+📌 **Analysis 5:**
 
-**Ticket Volume by Country:** All 10 European countries get similar volume (1,140-1,240 tickets each):
-- **Belgium:** ~1,240 (highest)
-- **Austria:** ~1,170
-- **Others:** All in similar range
+- **Observation:** The dataset covers **10 European countries**, with **Belgium generating the most tickets** (~1.23–1.24K range) and **Austria having the lowest MTTR** - making it the fastest-resolving country. Ticket volume is relatively evenly distributed across countries (1.14K–1.24K each), suggesting consistent global demand. The MTTR heatmap by Type and Country shows **Netherlands and Spain tend to have darker shades across all ticket types**, indicating slower resolution times. Tickets resolved in **2 days account for the highest average daily ticket count (8.77)**, while 4-day resolutions have the fewest (4.61) - confirming most tickets are being resolved within 3 days when compliant. 2024 dominates total ticket volume at **70.83%** vs 29.17% for 2025 (partial year).
 
-**Resolution Speed by Country:**
-- **Austria:** FASTEST ✅
-- **Netherlands & Spain:** SLOWEST ⚠️
-- **Others:** In the middle
-
-**Resolution Time Pattern:**
-- **2-day resolutions:** Most common, 8.77 daily average
-- **3-day resolutions:** 6.98 daily average  
-- **4-day resolutions:** Least common, 4.61 daily average
-
-**Time Period:** 2024 has **70.83%** of tickets, 2025 has **29.17%** (partial year).
-
-**Why This Matters:**
-- **Equal volume across countries = NO excuse for poor performance.** Netherlands gets same workload as Austria but resolves much slower. Not a workload issue - a process/staffing issue.
-- **Austria is proof it's achievable.** Same resources as others, but best speed. Their approach should become company standard.
-- **Netherlands and Spain being slow across ALL ticket types** suggests company-wide issue (staffing, tools, process) not specific to one team.
-
-**What To Do:**
-- 🔴 **Netherlands & Spain need urgent help:** Both consistently slow. (1) Check if understaffed vs. company standard. (2) If yes, hire. (3) Compare their process to Belgium/Austria - what's different? (4) Check their tools - are they slower? (5) Send Austria team to audit and train them.
-- 🟢 **Austria = the model:** (1) Document their complete process. (2) Have them lead training for other countries. (3) Use their speed (probably 2.5-2.6 days) as the company target, not 2.82 days.
-- 🟡 **Standardize globally:** Same SLA, same process, same tools across all countries. Don't let different regions have different standards.
-- 🟡 **Consider legitimate factors:** If Netherlands/Spain have real constraints (time zones, language, staffing market), acknowledge them. Adjust SLA or add resources accordingly. Don't set impossible targets.
-- 🟢 **Monthly knowledge sharing:** Country leads on video call share what works/doesn't. Best practices from one country spread to others.
+- **Recommendation:**
+  - 🔴 **Investigate Netherlands and Spain for systemic resolution delays.** The MTTR heatmap shows consistently darker cells across all ticket types - this points to a country-level staffing or process gap, not a ticket-type-specific issue.
+  - 🟡 **Study Austria's low-MTTR model and replicate it.** As the fastest-resolving country, Austria's local processes, team structure, or escalation paths may offer replicable lessons for slower countries.
+  - 🟢 **Standardize SLAs and workflows across all countries.** Even distribution of ticket volume means no country has a significantly higher workload - performance differences are driven by process quality, not scale.
 
 ---
 
@@ -441,5 +352,3 @@ The key point: **Technical Support handles the most work but has the SECOND-BEST
 ✔️ **Low-priority tickets are a hidden SLA drain.** Representing 44.44% of MTTR distribution, low-priority tickets are routinely deprioritized until they breach SLA. Setting maximum age limits and auto-escalation rules for aging low-priority tickets would materially reduce overall breach rates.
 
 ✔️ **Geographic performance gaps need country-level action plans.** Netherlands and Spain consistently show higher MTTR across all ticket types, while Austria resolves fastest. A structured knowledge-sharing program from high-performing to low-performing countries is a low-cost, high-impact lever.
-
-✔️ **Incident management is working - scale the model.** Incidents have the highest daily volume yet the lowest MTTR (2.7 days), proving the triage and escalation process works. Applying the same discipline to Request and Problem ticket workflows is the clearest path to reducing overall MTTR and SLA breach rates system-wide.
