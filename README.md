@@ -168,7 +168,7 @@ This project followed the Design Thinking framework across 3 main steps: Empathi
 
 > **⚙️ Advanced Power BI Features Used**
 >
-> - 🔖 **Bookmarks & Button** - A hidden filter panel is toggled by clicking the funnel icon (🔽) on the bottom-left of every page. The panel slides in with: Date Range slider (1/1/2024 – 6/4/2025), and slicers for Year-Month, Queue, Priority, and Country - applied simultaneously across the report page.
+> - 🔖 **Bookmarks & Button** - A hidden filter panel is toggled by clicking the filter icon on the bottom-left of every page. The panel slides in with: Date Range slider (1/1/2024 – 6/4/2025), and slicers for Year-Month, Queue, Priority, and Country - applied simultaneously across the report page.
 >
 > <p align="center"><img src="Images/Bookmarks.png" width="40%"></p>
 >
