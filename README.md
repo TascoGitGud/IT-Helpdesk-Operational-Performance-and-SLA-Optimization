@@ -178,7 +178,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
 
-### 1️⃣ Stage 1: Empathize
+### 1️⃣ Empathize - Understanding the Stakeholder
 
 | Question | Answer |
 |---|---|
@@ -191,7 +191,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **What will help them?** | • Everything in one dashboard.<br>• Clear data showing exact bottlenecks.<br>• Clear evidence for business decisions.<br>• Quick way to spot and fix problems. |
 | **Key Questions They Need Answered** | • How many tickets total? How fast are we fixing them?<br>• Which team misses most deadlines?<br>• Which type of ticket takes longest?<br>• Which country is slowest?<br>• Is ticket volume growing or shrinking? |
 
-### 2️⃣ Stage 2: Define POV 
+### 2️⃣ Define Point of View - Choosing the Right Angles
 
 | Perspective | What It Shows | Why It Matters |
 |---|---|---|
@@ -199,7 +199,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **Ticket Types & Categories** | How many of each type? How long does each type take? Which categories are fastest/slowest? | Shows which work is causing problems and where to focus. |
 | **Teams & Regions** | How fast is each team? How fast is each country? Who's doing well, who's struggling? | Shows exactly where to hire more staff or provide training. |
 
-**Key Metrics We Track:**
+**Northstar Metrics:**
 
 | Metric 1 | Metric 2 |
 |---|---|
@@ -208,7 +208,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | Goal: Get below 50% and keep dropping month by month. | Goal: Keep under 3 days, ideally trend toward 2.5 days. |
 | Why it matters: Shows how often we fail customers. High numbers mean customers are unhappy and lose trust. | Why it matters: Shows how fast the team actually works. If this is too high, everything else fails. |
 
-### 3️⃣ Stage 3: Ideate
+### 3️⃣ Ideate - Structuring the Dashboard
 
 | | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution & Locations** |
 |---|---|---|---|
