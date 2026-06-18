@@ -177,7 +177,6 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 ## 🧠 Design Thinking Process
 
 We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
-> 📄 For the full Design Thinking breakdown, see [IT Helpdesk Analysis Design Thinking.pdf](IT-Helpdesk-Analysis-Design-Thinking.pdf)
 
 ### 1️⃣ Empathize - Understanding the Stakeholder
 
@@ -223,6 +222,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top 5 Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country (map); Avg Daily Tickets by Resolution Days |
 | **Layer 2 (2-dimension breakdown)** | Calendar heatmap by day; Ticket MoM% by Type | Top 5 Queue × Priority (showing SLA Breach %); SLA Breach % by Day of Week | Heatmap: Ticket by Day Name × Month Name | Queue Performance Matrix (MTTR × SLA Breach %); Queue Detail Table | MTTR by Type × Country (heatmap); Total Ticket by Year |
 
+> 📄 For the full Design Thinking breakdown, see [IT Helpdesk Analysis Design Thinking.pdf](IT-Helpdesk-Analysis-Design-Thinking.pdf)
 ---
 
 ## ⚒️ Main Process
