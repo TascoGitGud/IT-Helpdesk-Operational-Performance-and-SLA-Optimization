@@ -34,15 +34,13 @@ _An interactive enterprise-grade analytical dashboard engineered using an optimi
 
 In modern large-scale corporate environments, an efficient IT service desk is crucial to safeguarding business continuity and employee productivity. As support organizations scale cross-border, tracking operational efficiency often becomes highly complex due to disconnected reporting mechanisms across separate tracking systems.
 
-The IT Manager (supported by the Service Desk Lead and Executive Board) needs a dashboard to answer 5 main questions:
+The IT Manager (supported by the Service Desk Lead and Executive Board) needs a dashboard to answer 3 main questions:
 
 ✔️ **Operational Baseline:** What are our current total ticket volumes, baseline resolution speeds, and overall monthly influx trends?
 
 ✔️ **SLA Compliance Bottlenecks:** Which support queues are experiencing the worst SLA non-compliance issues, and where are systemic delays occurring?
 
 ✔️ **Ticket Classification Impact:** Do Incident or Request tickets demand longer resolution intervals, and which ticket categories are driving the highest workloads?
-
-This project unifies disjointed flat-file data into a centralized, interactive analytics solution. By uncovering granular performance metrics, it empowers management to execute data-backed capacity scheduling, reorganize staff distribution, and systematically drive down service delivery failures.
 
 ### 👤 Who is this project for?
 
