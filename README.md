@@ -178,7 +178,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 This project followed the Design Thinking framework across 3 main steps: Empathize, Define Point of View, and Ideate.
 
-> 📄 For the full Design Thinking breakdown, see [Fashion Marketing & Sales Analysis - Design Thinking.pdf](Fashion-Marketing-Sales-Analysis-Design-Thinking.pdf)
+> 📄 For the full Design Thinking breakdown, see [Fashion Marketing & Sales Analysis - Design Thinking.pdf](IT Helpdesk Analysis - Design Thinking.pdf)
 
 ### 1️⃣ Empathize - Understanding the Stakeholder
 
