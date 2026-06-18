@@ -212,21 +212,11 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **Goal:** Drop below 50% and keep declining monthly | **Goal:** Trend downward monthly, stay under 3-day target |
 | **Why it matters:** Directly reflects service quality; high breach = poor customer experience and lost trust | **Why it matters:** Measures actual resolution speed; excessive MTTR is the root cause of SLA breaches |
 
-**Growth Formula by Perspective:**
-
-| Perspective | Growth Formula Breakdown |
-|---|---|
-| **Overview** | SLA Breach total by month |
-| **Ticket Types** | SLA Breach by ticket type & priority |
-| **Resolution Times** | MTTR average by month; MTTR by ticket type & priority |
-| **Queue** | SLA Breach by queue; MTTR by queue |
-| **Locations** | SLA Breach by country; MTTR by country |
-
 ---
 
 ### 3️⃣ Ideate - Structuring the Dashboard
 
-| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution Times** | **Page 4: Queue** | **Page 5: Locations** |
+| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution** | **Page 4: Queue** | **Page 5: Locations** |
 |---|---|---|---|---|---|
 | **Layer 0 (Scorecard - Most Important)** | Total Ticket, MTTR, Avg Monthly Tickets, % SLA Breach | Total by Type, Top Categories | Avg Daily Tickets, % SLA Breach | Metric Selector (Total/Breach/MTTR) | Lowest MTTR Country, Most Popular Country |
 | **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top 5 Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country (map); Avg Daily Tickets by Resolution Days |
