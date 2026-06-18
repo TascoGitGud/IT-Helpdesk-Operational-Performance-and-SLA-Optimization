@@ -57,7 +57,7 @@ The {{STAKEHOLDER}} needs a dashboard to answer {{N}} main questions:
 ## 📂 Dataset Description & Data Structure
 
 ## 📌 1. Data Source & Original Structure
-* **Source:** IT Support Ticket Desk (Dataset #12)
+* **Source:** IT Support Ticket Desk 
 * **Format:** Flat Excel file (`.xlsx`)
 * **Volume:** 1 single sheet (`Data`) containing **11,923 rows × 20 columns**
 * **Original Grain:** 1 row = 1 ticket
