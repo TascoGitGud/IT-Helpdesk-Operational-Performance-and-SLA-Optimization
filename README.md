@@ -56,52 +56,109 @@ The {{STAKEHOLDER}} needs a dashboard to answer {{N}} main questions:
 
 ## 📂 Dataset Description & Data Structure
 
-### 📌 Data Source
-- Source: {{DATA_SOURCE}}
-- Format: {{DATA_FORMAT}}
+## 📌 1. Data Source & Original Structure
+* **Source:** IT Support Ticket Desk (Dataset #12)
+* **Format:** Flat Excel file (`.xlsx`)
+* **Volume:** 1 single sheet (`Data`) containing **11,923 rows × 20 columns**
+* **Original Grain:** 1 row = 1 ticket
 
-### 📊 Data Structure & Relationships
-
-#### 1️⃣ Tables Used
-
-The dataset has **{{N_TABLES}} tables**:
-
-- **{{TABLE_1}}** - {{TABLE_1_DESC}}
-- **{{TABLE_2}}** - {{TABLE_2_DESC}}
-- **{{TABLE_3}}** - {{TABLE_3_DESC}}
-
-#### 2️⃣ Table Schema
-
-**Table: {{TABLE_1}}** ({{TABLE_1_ROLE}})
+### 🗂️ Original Data Dictionary
+Before transformation, the raw flat dataset mixed transactional ticket information, routing attributes, geographic coordinates, and multiple category tags into a single table:
 
 | Column Name | Description |
-|---|---|
-| {{COLUMN}} | {{DESCRIPTION}} |
+| :--- | :--- |
+| **Ticket ID** | Unique identifier for each ticket |
+| **Date** | Date the ticket was created |
+| **Resolution Date** | Calculated expected resolution date |
+| **Subject** | Subject line of the support ticket |
+| **Body** | Main body of the ticket request or issue |
+| **Answer** | Support response or follow-up provided |
+| **Type** | Type of request (e.g., Request, Problem) |
+| **Queue** | Support queue handling the ticket |
+| **Priority** | Priority level assigned to the ticket |
+| **Primary Tag** | Primary classification of the ticket |
+| **Secondary Tag** | Secondary classification for added context |
+| **Category Tag** | General category tag for classification |
+| **Technical Tag** | Specific technical classification tag |
+| **Status Tag** | Status or nature of the issue |
+| **Resolution Tag** | Assigned resolution classification |
+| **Documentation Tag** | Documentation reference tag |
+| **Additional Tag** | Additional contextual or tagging info |
+| **Country** | Country of origin for the ticket |
+| **Latitude** | Latitude of the originating location |
+| **Longitude** | Longitude of the originating location |
 
-**Table: {{TABLE_2}}**
+---
 
+## ⚙️ 2. Data Processing & Modeling Decisions
+To convert this flat file into a high-performance **Star Schema** within Power BI, the original structure was modified through the following architectural decisions:
+
+### A. Extracting Standard Dimension Tables
+Purely descriptive string columns were decoupled from the fact table into normalized dimension tables to reduce redundancy, maximize file compression, and optimize filtering performance:
+
+| Target Dimension | Original Column(s) | Transformation Reason & Logic |
+| :--- | :--- | :--- |
+| **Dim_Queue** | `Queue` | Prevents repetitive string storage; optimizes slicing/filtering performance. |
+| **Dim_Priority** | `Priority` | Standardizes and restricts values into 3 clean categories: *Low / Medium / High*. |
+| **Dim_Type** | `Type` | Standardizes data quality into 4 distinct request types: *Request / Problem / Incident / Change*. |
+| **Dim_Country** | `Country`, `Latitude`, `Longitude` | Consolidates related spatial attributes into a singular geographic lookup dimension. |
+
+### B. Advanced Tag Handling (Many-to-Many Normalization)
+The raw dataset contained **8 separate tag columns** (`Primary`, `Secondary`, `Category`, `Technical`, `Status`, `Resolution`, `Documentation`, `Additional`). Since a single ticket can hold multiple tag designations, mapping them horizontally causes data sparsity and restricts reporting flexibility.
+1. **Unpivot Process:** Unpivoted all 8 tag columns into two standardized key-value columns: `Tag Name` and `Tag Type`.
+2. **Dimension Creation (`Dim_Tag`):** Removed duplicates from the unpivoted columns and assigned a unique surrogate `Tag ID` to build a centralized tag dictionary.
+3. **Bridge Table (`Bridge_Ticket_Tag`):** Constructed a junction table mapped with `Ticket ID` and `Tag ID`. This cleanly resolves the **Many-to-Many relationship** between tickets and tags while strictly preserving the transactional grain of the fact table (**1 row = 1 ticket**).
+
+### C. Time Intelligence
+* **Dim_Date:** A dedicated calendar table generated via DAX, established with a 1-to-many relationship linking back to the `Date` column inside the fact table to unlock complex time-intelligence calculations (YoY, MoM, rolling totals).
+
+---
+
+## 📊 3. Final Star Schema Structure & Relationships
+
+### 1️⃣ Tables Used
+The finalized data model consists of **8 total tables** (1 Fact table, 1 Bridge table, 6 Dimension tables):
+* **Fact_Ticket** - Holds core transactional details, messages, answers, and time metrics (Grain: 1 row = 1 unique ticket).
+* **Dim_Tag** - The comprehensive consolidated tag directory.
+* **Bridge_Ticket_Tag** - Intersection bridge to facilitate many-to-many tag relations.
+* **Dim_Date** - DAX calendar dimensions.
+* **Dim_Queue / Dim_Priority / Dim_Type / Dim_Country** - Outrigger lookup metrics used to slice analytical charts.
+
+### 2️⃣ Core Table Schemas
+
+#### Table: Fact_Ticket (Fact Table)
 | Column Name | Description |
-|---|---|
-| {{COLUMN}} | {{DESCRIPTION}} |
+| :--- | :--- |
+| Ticket ID | **Primary Key.** Unique identifier for each support ticket. |
+| Subject | Subject line of the support ticket. |
+| Body | Main body text detailing the customer's request or issue. |
+| Answer | Support response or resolution text provided to the user. |
+| Date | Date the ticket was created (Foreign Key to `Dim_Date`). |
+| Resolution Date | Calculated expected resolution date. |
+| Queue ID / Priority ID / Type ID / Country ID | Foreign Keys linking to respective lookup dimension tables. |
 
-**Table: {{TABLE_3}}**
-
+#### Table: Dim_Tag (Dimension Table)
 | Column Name | Description |
-|---|---|
-| {{COLUMN}} | {{DESCRIPTION}} |
+| :--- | :--- |
+| Tag ID | **Primary Key.** Unique auto-generated identifier for each distinct tag. |
+| Tag Name | The specific tag string value (e.g., "Integration", "Billing", "Sales"). |
+| Tag Type | The original functional column category of the tag (e.g., Primary, Technical, Status). |
 
-#### 3️⃣ Data Relationships
+#### Table: Bridge_Ticket_Tag (Bridge Table)
+| Column Name | Description |
+| :--- | :--- |
+| Ticket ID | Foreign Key linking back to `Fact_Ticket`. |
+| Tag ID | Foreign Key linking back to `Dim_Tag`. |
 
-The {{N_TABLES}} tables are connected as follows:
-
-- **{{TABLE_X}} → {{TABLE_Y}}**: {{RELATIONSHIP_DESC}} (joined on `{{KEY}}`)
-- **{{TABLE_Y}} → {{TABLE_Z}}**: {{RELATIONSHIP_DESC}} (joined on `{{KEY}}`)
+### 3️⃣ Data Relationships
+* **Dim_Date** → **Fact_Ticket**: 1-to-Many (joined on `Date`)
+* **Dim_Queue / Dim_Priority / Dim_Type / Dim_Country** → **Fact_Ticket**: 1-to-Many (joined on respective dimension IDs)
+* **Fact_Ticket** → **Bridge_Ticket_Tag**: 1-to-Many (joined on `Ticket ID`)
+* **Dim_Tag** → **Bridge_Ticket_Tag**: 1-to-Many (joined on `Tag ID`)
 
 <p align="center">
   <img src="Images/data_model.png" width="80%">
 </p>
-
----
 
 ## 🧠 Design Thinking Process
 
