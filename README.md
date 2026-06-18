@@ -15,7 +15,7 @@ _{{ONE_LINE_SUMMARY}}_
 - 🏬 **Domain:** {{DOMAIN}}
 - 🛠️ **Tools:** Power BI
 
-👤 Author: {{Bach Minh Nam}}
+👤 Author: Bạch Minh Nam
 
 ---
 
