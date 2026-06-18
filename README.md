@@ -11,7 +11,7 @@
 
 _An interactive Power BI Star Schema dashboard designed to monitor helpdesk operational throughput, identify queue bottlenecks, and remediate systemic SLA compliance gaps._
 
-- 🎯 **Business Question:** How can we optimize ticket resolution workflows (MTTR) and systematically reduce the critical 61.66% SLA breach rate across queues and regional boundaries?
+- 🎯 **Business Question:** How can we optimize ticket resolution workflows (MTTR) and systematically?
 - 🏬 **Domain:** IT Operations / Service Management (ITSM) / Corporate Infrastructure
 - 🛠️ **Tools:** Power BI
 
