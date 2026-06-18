@@ -42,6 +42,8 @@ The IT Manager (supported by the Service Desk Lead and Executive Board) needs a 
 
 ✔️ **Ticket Classification Impact:** Do Incident or Request tickets demand longer resolution intervals, and which ticket categories are driving the highest workloads?
 
+A centralized analytics solution that unifies disjointed data to optimize staff scheduling, resource allocation, and reduce service delivery failures.
+
 ### 👤 Who is this project for?
 
 ✔️ **IT Support Manager & Service Desk Lead** - Need to monitor active backlogs, track real-time queue bottlenecks, and audit team-wide resolution speeds against established SLA agreements.
