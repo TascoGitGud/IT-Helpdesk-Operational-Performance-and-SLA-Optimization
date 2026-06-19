@@ -34,7 +34,7 @@ _An interactive dashboard built to help IT managers track support tickets, find 
 
 The IT Manager needs a dashboard to answer 3 main questions:
 
-✔️ **Current Situation:** How many tickets arrive each month? How fast are we fixing them? What's the trend?
+✔️ **Current Situation:** How many tickets arrive each month? How fast are they being fixed? What's the trend?
 
 ✔️ **Where Are We Failing:** Which support teams are missing deadlines? Where do tickets get stuck the longest?
 
@@ -60,7 +60,7 @@ The goal is to have **one central dashboard** that shows all this information cl
 * **Amount:** 11,923 support tickets tracked over 20 months
 * **Basic unit:** Each row = 1 ticket
 
-### What Information We Have About Each Ticket?
+### What Information Is Available About Each Ticket?
 
 | Column Name | What It Means |
 | :--- | :--- |
@@ -92,10 +92,10 @@ The goal is to have **one central dashboard** that shows all this information cl
 ### The Problem With Raw Data
 Originally, all the information was mixed together in one big table. Same information repeated many times, made filtering slow, made reporting difficult.
 
-### What We Did
+### Data Processing Steps
 
-### A. Separated Information Into Smaller, Organized Tables
-Instead of one messy table, we created:
+### A. Information Separated Into Smaller, Organized Tables
+Instead of one messy table, the data is structured into:
 - **Team Table:** Lists all support queues (Customer Service, Technical Support, HR, etc.)
 - **Priority Table:** Lists priority levels (Low, Medium, High)
 - **Type Table:** Lists ticket types (Request, Problem, Incident, Change)
@@ -104,24 +104,24 @@ Instead of one messy table, we created:
 - **Date Table:** Calendar for time-based analysis
 - **Main Ticket Table:** Core ticket information
 
-This way, we don't repeat "Customer Service" 500 times in the data - we just reference it once.
+This way, "Customer Service" is stored once and referenced — not repeated 500 times across the data.
 
-### B. Handled Multiple Tags Per Ticket Properly
-The raw data had 8 different tag columns. One ticket could have multiple tags. Instead of keeping them spread across columns, we organized them in a special bridge table:
+### B. Multiple Tags Per Ticket Handled Properly
+The raw data had 8 different tag columns. One ticket could have multiple tags. Instead of keeping them spread across columns, they are organized in a special bridge table:
 - Unpivoted (reorganized) all 8 tag columns into 2 neat columns: `Tag Name` and `Tag Type`
 - Created a **Dim_Tag** table with unique list of all tags
 - Created a **Bridge_Ticket_Tag** table that links tickets to their tags
-- This way tickets keep their information clean, and we can still analyze by any tag combination
+- This way tickets keep their information clean, and analysis by any tag combination remains possible
 
-### C. Set Up Time Intelligence for Trends
-- Created a **Date Table** using formulas so we can easily calculate trends month-to-month and year-to-year
-- Connected dates to the main ticket table for fast analysis
+### C. Time Intelligence Set Up for Trends
+- A **Date Table** was created using formulas to easily calculate trends month-to-month and year-to-year
+- Dates are connected to the main ticket table for fast analysis
 
 ---
 
 ## 📊 Final Data Structure & How Tables Connect
 
-### Tables In Our System
+### Tables In the System
 **8 total tables** organized like this:
 
 **1 Main Table (holds ticket information):**
@@ -176,7 +176,7 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 ## 🧠 Design Thinking Process
 
-We followed a simple 3-step thinking process to understand what stakeholders need and what to show them.
+A simple 3-step thinking process was followed to understand what stakeholders need and what to show them.
 
 ### 1️⃣ Empathize - Understanding the Stakeholder
 
@@ -185,7 +185,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 | **Who looks at this dashboard?** | IT Managers, Service Desk Leads, and Executives |
 | **What problem does it solve?** | Track helpdesk performance, identify stuck tickets, know which queues miss deadlines, understand resolution times, and whether performance is improving |
 | **When is it used?** | Daily to monitor new tickets and SLA; Weekly to review team performance; On laptop or big screen in meetings |
-| **Why do they need it?** | SLA breach rate is too high but we don't know where to start fixing it. Need data evidence to report to leadership. |
+| **Why do they need it?** | SLA breach rate is too high but there is no clear starting point for fixing it. Data evidence is needed to report to leadership. |
 | **How will they use it to make decisions?** | Look at MTTR and % SLA Breach, compare between queues/ticket types/regions, then reallocate staff or adjust processes |
 | **What problems do they face now?** | • Don't know where tickets are stuck<br>• Hard to compare performance between queues and countries<br>• SLA breach is high but root cause is unclear<br>• Can't show leadership why more resources are needed |
 | **What will help them?** | • See bottleneck instantly in one view<br>• Allocate staff correctly based on data<br>• Reduce SLA breach systematically |
@@ -241,7 +241,7 @@ We followed a simple 3-step thinking process to understand what stakeholders nee
 
 ### 🔍 Dashboard Features
 
-> **Advanced Features We Used**
+> **Advanced Features Used**
 >
 > - 🔖 **Filters** - Hidden filter panel at bottom-left. Click to show/hide. Filters include: Date range (1/1/2024 – 6/4/2025), Month, Queue, Priority, Country. These filters work on all pages at once.
 >
