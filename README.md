@@ -15,7 +15,7 @@ _An interactive dashboard built to help IT managers track support tickets, find 
 - 🏬 **Area:** IT Service Management (ITSM) / Business Operations
 - 🛠️ **Tools:** Power BI
 
-👤 Author: Bach Minh Nam
+👤 Author: Bạch Minh Nam
 
 ---
 
