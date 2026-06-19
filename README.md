@@ -56,7 +56,7 @@ The goal is to have **one central dashboard** that shows all this information cl
 
 ### Data Source & Size
 * **Dataset:** IT Support Ticket System
-* **File type:** Excel spreadsheet (.xlsx)
+* **File type:** Excel spreadsheet (`.xlsx`)
 * **Amount:** 11,923 support tickets tracked over 20 months
 * **Basic unit:** Each row = 1 ticket
 
@@ -64,26 +64,26 @@ The goal is to have **one central dashboard** that shows all this information cl
 
 | Column Name | What It Means |
 | :--- | :--- |
-| **Ticket ID** | Unique number for each ticket |
-| **Date** | When the ticket was created |
-| **Resolution Date** | The deadline when it should be fixed |
-| **Subject** | What the ticket is about |
-| **Body** | Detailed description of the issue |
-| **Answer** | What the support team responded with |
-| **Type** | Category: Request, Problem, Incident, or Change |
-| **Queue** | Which team handles it (Tech Support, Customer Service, HR, etc.) |
-| **Priority** | Level: Low, Medium, or High |
-| **Primary Tag** | Main category label |
-| **Secondary Tag** | Additional category label for context |
-| **Category Tag** | General category label |
-| **Technical Tag** | Specific technical category |
-| **Status Tag** | Current status or nature of the issue |
-| **Resolution Tag** | How it was resolved |
-| **Documentation Tag** | Reference to documentation |
-| **Additional Tag** | Any other relevant labels |
-| **Country** | Which country the request came from |
-| **Latitude** | Location coordinates |
-| **Longitude** | Location coordinates |
+| `Ticket ID` | Unique number for each ticket |
+| `Date` | When the ticket was created |
+| `Resolution Date` | The deadline when it should be fixed |
+| `Subject` | What the ticket is about |
+| `Body` | Detailed description of the issue |
+| `Answer` | What the support team responded with |
+| `Type` | Category: Request, Problem, Incident, or Change |
+| `Queue` | Which team handles it (Tech Support, Customer Service, HR, etc.) |
+| `Priority` | Level: Low, Medium, or High |
+| `Primary Tag` | Main category label |
+| `Secondary Tag` | Additional category label for context |
+| `Category Tag` | General category label |
+| `Technical Tag` | Specific technical category |
+| `Status Tag` | Current status or nature of the issue |
+| `Resolution Tag` | How it was resolved |
+| `Documentation Tag` | Reference to documentation |
+| `Additional Tag` | Any other relevant labels |
+| `Country` | Which country the request came from |
+| `Latitude` | Location coordinates |
+| `Longitude` | Location coordinates |
 
 ---
 
@@ -109,12 +109,12 @@ This way, "Customer Service" is stored once and referenced — not repeated 500 
 ### B. Multiple Tags Per Ticket Handled Properly
 The raw data had 8 different tag columns. One ticket could have multiple tags. Instead of keeping them spread across columns, they are organized in a special bridge table:
 - Unpivoted (reorganized) all 8 tag columns into 2 neat columns: `Tag Name` and `Tag Type`
-- Created a **Dim_Tag** table with unique list of all tags
-- Created a **Bridge_Ticket_Tag** table that links tickets to their tags
+- Created a `Dim_Tag` table with unique list of all tags
+- Created a `Bridge_Ticket_Tag` table that links tickets to their tags
 - This way tickets keep their information clean, and analysis by any tag combination remains possible
 
 ### C. Time Intelligence Set Up for Trends
-- A **Date Table** was created using formulas to easily calculate trends month-to-month and year-to-year
+- A `Dim_Date` table was created using formulas to easily calculate trends month-to-month and year-to-year
 - Dates are connected to the main ticket table for fast analysis
 
 ---
@@ -125,50 +125,50 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 **8 total tables** organized like this:
 
 **1 Main Table (holds ticket information):**
-* **Fact_Ticket** - All the core ticket details and numbers
+* `Fact_Ticket` - All the core ticket details and numbers
 
 **1 Bridge Table (connects tickets to multiple tags):**
-* **Bridge_Ticket_Tag** - Links each ticket to all its tags
+* `Bridge_Ticket_Tag` - Links each ticket to all its tags
 
 **6 Lookup Tables (support information):**
-* **Dim_Queue** - List of all support teams
-* **Dim_Priority** - List of priority levels
-* **Dim_Type** - List of ticket types
-* **Dim_Country** - List of countries with location info
-* **Dim_Tag** - List of all issue tags/categories
-* **Dim_Date** - Calendar table for time analysis
+* `Dim_Queue` - List of all support teams
+* `Dim_Priority` - List of priority levels
+* `Dim_Type` - List of ticket types
+* `Dim_Country` - List of countries with location info
+* `Dim_Tag` - List of all issue tags/categories
+* `Dim_Date` - Calendar table for time analysis
 
 ### Core Tables Explained
 
-#### Fact_Ticket (Main Ticket Information)
+#### `Fact_Ticket` (Main Ticket Information)
 | Column Name | What It Contains |
 | :--- | :--- |
-| Ticket ID | **Unique ID.** The main identifier for each ticket. |
-| Subject | The headline of the ticket. |
-| Body | Full description of the problem. |
-| Answer | Response from the support team. |
-| Date | When the ticket was created. |
-| Resolution Date | When it was closed. |
-| Queue ID, Priority ID, Type ID, Country ID | Numbers that link to the lookup tables |
+| `Ticket ID` | **Unique ID.** The main identifier for each ticket. |
+| `Subject` | The headline of the ticket. |
+| `Body` | Full description of the problem. |
+| `Answer` | Response from the support team. |
+| `Date` | When the ticket was created. |
+| `Resolution Date` | When it was closed. |
+| `Queue ID`, `Priority ID`, `Type ID`, `Country ID` | Numbers that link to the lookup tables |
 
-#### Dim_Tag (All Issue Categories)
+#### `Dim_Tag` (All Issue Categories)
 | Column Name | What It Contains |
 | :--- | :--- |
-| Tag ID | **Unique ID.** Number for each tag. |
-| Tag Name | The actual tag text (like "Technical", "Billing", "Security"). |
-| Tag Type | What type of tag it is (Primary, Secondary, Technical, Status, etc.). |
+| `Tag ID` | **Unique ID.** Number for each tag. |
+| `Tag Name` | The actual tag text (like "Technical", "Billing", "Security"). |
+| `Tag Type` | What type of tag it is (Primary, Secondary, Technical, Status, etc.). |
 
-#### Bridge_Ticket_Tag (Linking Tickets to Tags)
+#### `Bridge_Ticket_Tag` (Linking Tickets to Tags)
 | Column Name | What It Contains |
 | :--- | :--- |
-| Ticket ID | Links back to a ticket. |
-| Tag ID | Links to a tag. |
+| `Ticket ID` | Links back to a ticket. |
+| `Tag ID` | Links to a tag. |
 
 ### How Tables Connect to Each Other
-* **Date Table → Ticket Table:** 1 date connects to many tickets (one-to-many)
-* **Queue/Priority/Type/Country → Ticket Table:** 1 queue connects to many tickets (one-to-many)
-* **Ticket Table → Bridge Table:** 1 ticket connects to many tags (one-to-many)
-* **Tag Table → Bridge Table:** 1 tag connects to many tickets (one-to-many)
+* `Dim_Date` → `Fact_Ticket`: 1 date connects to many tickets (one-to-many)
+* `Dim_Queue` / `Dim_Priority` / `Dim_Type` / `Dim_Country` → `Fact_Ticket`: 1 queue connects to many tickets (one-to-many)
+* `Fact_Ticket` → `Bridge_Ticket_Tag`: 1 ticket connects to many tags (one-to-many)
+* `Dim_Tag` → `Bridge_Ticket_Tag`: 1 tag connects to many tickets (one-to-many)
 
 <p align="center">
   <img src="Images/data_model.png" width="80%">
