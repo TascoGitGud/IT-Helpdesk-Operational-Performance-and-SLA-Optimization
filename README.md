@@ -55,7 +55,7 @@ The goal is to have **one central dashboard** that shows all this information cl
 ## 📂 Dataset Description & Data Structure
 
 ### Data Source & Size
-* **Where it comes from:** IT Support Ticket System
+* **Dataset:** IT Support Ticket System
 * **File type:** Excel spreadsheet (.xlsx)
 * **Amount:** 11,923 support tickets tracked over 20 months
 * **Basic unit:** Each row = 1 ticket
