@@ -12,7 +12,7 @@
 _An interactive dashboard built to help IT managers track support tickets, find bottlenecks in the system, and reduce missed deadlines (SLA breaches)._
 
 - 🎯 **Main Goal:** How can we reduce missed deadlines and speed up ticket resolution across different support teams and countries?
-- 🏬 **Area:** IT Service Management (ITSM) / Business Operations
+- 🏬 **Domain:** IT Service Management (ITSM) / Business Operations
 - 🛠️ **Tools:** Power BI
 
 👤 Author: Bạch Minh Nam
