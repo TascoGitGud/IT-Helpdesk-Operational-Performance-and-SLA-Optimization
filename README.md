@@ -208,7 +208,7 @@ A simple 3-step thinking process was followed to understand what stakeholders ne
 | Metric 1 | Metric 2 |
 |---|---|
 | **% SLA Breach** | **MTTR (Mean Time To Resolve)** |
-| **Formula:** (Tickets resolved late) / (Total tickets) × 100 | **Formula:** Sum of all resolution times / Number of tickets |
+| **Formula:** `(Tickets resolved late) / (Total tickets) × 100` | **Formula:** `Sum of all resolution times / Number of tickets` |
 | **Goal:** Drop below 50% and keep declining monthly | **Goal:** Trend downward monthly, stay under 3-day target |
 | **Why it matters:** Directly reflects service quality; high breach = poor customer experience and lost trust | **Why it matters:** Measures actual resolution speed; excessive MTTR is the root cause of SLA breaches |
 
