@@ -1,3 +1,5 @@
+# 📊 Power BI | IT Helpdesk Operational Performance & SLA Optimization
+
 ![Power BI](https://img.shields.io/badge/Tool-Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
@@ -6,8 +8,6 @@
 <p align="center">
   <img src="Images/banner.jpg" width="100%">
 </p>
-
-# 📊 IT Helpdesk Operational Performance & SLA Optimization | Power BI
 
 _An interactive dashboard built to help IT managers track support tickets, find bottlenecks in the system, and reduce missed deadlines (SLA breaches)._
 
