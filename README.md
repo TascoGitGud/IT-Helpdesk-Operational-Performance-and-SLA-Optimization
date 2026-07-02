@@ -60,7 +60,12 @@ The goal is to have **one central dashboard** that shows all this information cl
 * **Amount:** 11,923 support tickets tracked over 20 months
 * **Basic unit:** Each row = 1 ticket
 
+---
+
 ### What Information Is Available About Each Ticket?
+
+<details>
+<summary><b>📋 Click to view all ticket columns</b></summary>
 
 | Column Name | What It Means |
 | :--- | :--- |
@@ -85,6 +90,8 @@ The goal is to have **one central dashboard** that shows all this information cl
 | `Latitude` | Location coordinates |
 | `Longitude` | Location coordinates |
 
+</details>
+
 ---
 
 ## ⚙️ Data Organization & Setup
@@ -92,9 +99,12 @@ The goal is to have **one central dashboard** that shows all this information cl
 ### The Problem With Raw Data
 Originally, all the information was mixed together in one big table. Same information repeated many times, made filtering slow, made reporting difficult.
 
+---
+
 ### Data Processing Steps
 
 ### A. Information Separated Into Smaller, Organized Tables
+
 Instead of one messy table, the data is structured into:
 - **Team Table:** Lists all support queues (Customer Service, Technical Support, HR, etc.)
 - **Priority Table:** Lists priority levels (Low, Medium, High)
@@ -107,6 +117,7 @@ Instead of one messy table, the data is structured into:
 This way, "Customer Service" is stored once and referenced — not repeated 500 times across the data.
 
 ### B. Multiple Tags Per Ticket Handled Properly
+
 The raw data had 8 different tag columns. One ticket could have multiple tags. Instead of keeping them spread across columns, they are organized in a special bridge table:
 - Unpivoted (reorganized) all 8 tag columns into 2 neat columns: `Tag Name` and `Tag Type`
 - Created a `Dim_Tag` table with unique list of all tags
@@ -121,26 +132,11 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 
 ## 📊 Final Data Structure & How Tables Connect
 
-### Tables In the System
-**8 total tables** organized like this:
+**8 total tables** organized into 3 groups:
 
-**1 Main Table (holds ticket information):**
-* `Fact_Ticket` - All the core ticket details and numbers
+<details>
+<summary><b>🗂️ Fact_Ticket - Main Ticket Information</b></summary>
 
-**1 Bridge Table (connects tickets to multiple tags):**
-* `Bridge_Ticket_Tag` - Links each ticket to all its tags
-
-**6 Lookup Tables (support information):**
-* `Dim_Queue` - List of all support teams
-* `Dim_Priority` - List of priority levels
-* `Dim_Type` - List of ticket types
-* `Dim_Country` - List of countries with location info
-* `Dim_Tag` - List of all issue tags/categories
-* `Dim_Date` - Calendar table for time analysis
-
-### Core Tables Explained
-
-#### `Fact_Ticket` (Main Ticket Information)
 | Column Name | What It Contains |
 | :--- | :--- |
 | `Ticket ID` | **Unique ID.** The main identifier for each ticket. |
@@ -151,18 +147,39 @@ The raw data had 8 different tag columns. One ticket could have multiple tags. I
 | `Resolution Date` | When it was closed. |
 | `Queue ID`, `Priority ID`, `Type ID`, `Country ID` | Numbers that link to the lookup tables |
 
-#### `Dim_Tag` (All Issue Categories)
+</details>
+
+<details>
+<summary><b>🔗 Bridge_Ticket_Tag - Linking Tickets to Tags</b></summary>
+
+| Column Name | What It Contains |
+| :--- | :--- |
+| `Ticket ID` | Links back to a ticket. |
+| `Tag ID` | Links to a tag. |
+
+</details>
+
+<details>
+<summary><b>📎 Dim_Tag - All Issue Categories</b></summary>
+
 | Column Name | What It Contains |
 | :--- | :--- |
 | `Tag ID` | **Unique ID.** Number for each tag. |
 | `Tag Name` | The actual tag text (like "Technical", "Billing", "Security"). |
 | `Tag Type` | What type of tag it is (Primary, Secondary, Technical, Status, etc.). |
 
-#### `Bridge_Ticket_Tag` (Linking Tickets to Tags)
-| Column Name | What It Contains |
-| :--- | :--- |
-| `Ticket ID` | Links back to a ticket. |
-| `Tag ID` | Links to a tag. |
+</details>
+
+<details>
+<summary><b>📁 Lookup Tables (Dim_Queue, Dim_Priority, Dim_Type, Dim_Country, Dim_Date)</b></summary>
+
+- `Dim_Queue` - List of all support teams
+- `Dim_Priority` - List of priority levels (Low, Medium, High)
+- `Dim_Type` - List of ticket types (Request, Problem, Incident, Change)
+- `Dim_Country` - List of countries with location info
+- `Dim_Date` - Calendar table for time analysis
+
+</details>
 
 ### How Tables Connect to Each Other
 * `Dim_Date` → `Fact_Ticket`: 1 date connects to many tickets (one-to-many)
@@ -222,42 +239,11 @@ A simple 3-step thinking process was followed to understand what stakeholders ne
 | **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country ; Avg Daily Tickets by Resolution Days |
 | **Layer 2 (2-dimension breakdown)** | Ticket by day; Ticket MoM% by Type | Top Queue × Priority (showing SLA Breach %); SLA Breach % by Day of Week | Ticket by Day/ Month | Queue Performance (MTTR × SLA Breach %); Queue Detail Table | MTTR by Type × Country ; Total Ticket by Year |
 
-> 📄 For the full Design Thinking breakdown, see [IT Helpdesk Analysis Design Thinking.pdf](IT-Helpdesk-Analysis-Design-Thinking.pdf)
----
-
-## ⚒️ Main Process
-
-1️⃣ **Load Data** - Connected Power BI to the ticket file, checked all data types, organized in Power Query.
-
-2️⃣ **Build Data Model** - Took flat structure and organized it into separate clean tables, unpivoted the tags, created bridge table, built Star Schema.
-
-3️⃣ **Create Formulas** - Wrote formulas to calculate total tickets, average resolution time, breach rate, month-over-month changes, and team performance.
-
-4️⃣ **Build Dashboard** - Created 5 interactive pages with filters, hover tooltips, drill-down details, and navigation buttons.
-
 ---
 
 ## 📊 Key Insights & Visualizations
 
 ### 🔍 Dashboard Features
-
-> **Advanced Features Used**
->
-> - 🔖 **Filters** - Hidden filter panel at bottom-left. Click to show/hide. Filters include: Date range (1/1/2024 – 6/4/2025), Month, Queue, Priority, Country. These filters work on all pages at once.
->
-> <p align="center"><img src="Images/Bookmarks.png" width="40%"></p>
->
-> - 🔍 **Drill-Down Details** - Click any data point to see individual ticket details. Shows: Ticket ID, Priority, Queue, Tag, Status, Created Date, Resolution Date, Days to Resolve.
->
-> <p align="center"><img src="Images/Drill_Though.png" width="100%"></p>
->
-> - 💬 **Hover for More Info** - Hover your mouse over data points to see more details without cluttering the page.
->
-> <p align="center"><img src="Images/tooltip1.png" width="48%"> <img src="Images/tooltip2.png" width="48%"></p>
->
-> - 🔙 **Back Button** - On the detail page, click back arrow to return to the main page.
-
----
 
 #### 1️⃣ Page 1 - Overview
 
