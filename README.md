@@ -60,8 +60,6 @@ The goal is to have **one central dashboard** that shows all this information cl
 * **Amount:** 11,923 support tickets tracked over 20 months
 * **Basic unit:** Each row = 1 ticket
 
----
-
 ### What Information Is Available About Each Ticket?
 
 <details>
