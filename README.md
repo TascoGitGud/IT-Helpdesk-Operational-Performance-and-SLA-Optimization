@@ -231,16 +231,6 @@ A simple 3-step thinking process was followed to understand what stakeholders ne
 
 ---
 
-### 3️⃣ Ideate - Structuring the Dashboard
-
-| | **Page 1: Overview** | **Page 2: Ticket Types** | **Page 3: Resolution** | **Page 4: Queue** | **Page 5: Locations** |
-|---|---|---|---|---|---|
-| **Layer 0 (Scorecard - Most Important)** | Total Ticket, MTTR, Avg Monthly Tickets, % SLA Breach | Total by Type, Top Categories | Avg Daily Tickets, % SLA Breach | Metric Selector (Total/Breach/MTTR) | Lowest MTTR Country, Most Popular Country |
-| **Layer 1 (1-dimension breakdown)** | Ticket by month/year; MTTR vs SLA Target; Ticket by Priority | Ticket by month & priority; Ticket by type; Top Primary Tag | MTTR by Priority; MTTR & Daily Tickets by Type | Total Ticket by Queue; Queue Comparison Chart | Total Ticket by Country ; Avg Daily Tickets by Resolution Days |
-| **Layer 2 (2-dimension breakdown)** | Ticket by day; Ticket MoM% by Type | Top Queue × Priority (showing SLA Breach %); SLA Breach % by Day of Week | Ticket by Day/ Month | Queue Performance (MTTR × SLA Breach %); Queue Detail Table | MTTR by Type × Country ; Total Ticket by Year |
-
----
-
 ## 📊 Key Insights & Visualizations
 
 ### 🔍 Dashboard Features
